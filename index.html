@@ -10,10 +10,12 @@
 
 
 
+<!-----------------------------all css conection to the html----------------------------------------------------->
 
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/welcome.css" />
     <link rel="stylesheet" href="css/stars.css" />
+<!---------------------------------------------------------------------------------->
 
 
    
@@ -21,6 +23,7 @@
 
 
 <body>
+<!--------------------------------menu and logo-------------------------------------------------->
     <header >
         <div class="logo">
             <img src="/media/logo.png">
@@ -56,10 +59,42 @@
             </ul>
         </div>
     </header>
+<!---------------------------------------------------------------------------------->
+    <div id="content">
+        <div id="welcomePage">
+            <div class="rocket">
+                <div class="rocket-body">
+                    <div class="body"></div>
+                    <div class="fin fin-left"></div>
+                    <div class="fin fin-right"></div>
+                    <div class="window"></div>
+                </div>
+                <div class="exhaust-flame"></div>
+                <ul class="exhaust-fumes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <button id="signUp" class="btn btn1" onclick="toggleSignUp()">
+                    Sign Up
+                  </button>
+                  <button id="Login" class="btn btn2" onclick="showLogin()">
+                    Login
+                  </button>
+            </div>
+        </div>
+        
+    </div>
 
 
-
-<!--draw the move backgroung stars-->
+<!-----------------------------------draw the move backgroung stars---------------------->
     <div id="starfield"></div>
     <div id="gamecontainer">
     <canvas id="gameCanvas"></canvas>
@@ -79,7 +114,7 @@
 
 
 
-
+<!----------------------------------footet+share+contact us------------------------------------------------>
 
     <footer >
         <div class="footer-content">
@@ -93,9 +128,12 @@
 
         
       </footer>
+<!-------------------------------all javascript connections to the html--------------------------------------------------->
+
 
       <script type="text/javascript" src="./js/hamburger.js"></script>
-    
+<!---------------------------------------------------------------------------------->
+
 </body>
 
 </html>
