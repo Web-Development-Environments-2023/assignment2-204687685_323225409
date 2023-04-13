@@ -13,26 +13,70 @@
 
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/welcome.css" />
+    <link rel="stylesheet" href="css/stars.css" />
 
+
+   
 </head>
 
 
 <body>
     <header >
-        
-        <div class="navbar">
-            <img src="media/logo.png" class="logo">
-            <nav class="menuBar" >
-                <ul >
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li> 
-                </ul>
-            </nav>
-            
+        <div class="logo">
+            <img src="/media/logo.png">
         </div>
-        <img src="media/hamburger.png" class="menu-icon">
+        <div class="names">
+            <h1> &nbsp;&nbsp;AYELET & NATALIA
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;SPACE INVADERS
+            </h1>
+    
+        </div>
+
+        <div class="navbar">
+            <div class="hamburger-menu">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Log In</a>
+                </li>
+            </ul>
+        </div>
     </header>
+
+
+
+<!--draw the move backgroung stars-->
+    <div id="starfield"></div>
+    <div id="gamecontainer">
+    <canvas id="gameCanvas"></canvas>
+    </div>
+    
+    <script src="js/starfield.js"></script>
+    <script>
+
+        //  Create the starfield.
+        var container = document.getElementById('starfield');
+        var starfield = new Starfield();
+        starfield.initialise(container);
+        starfield.start();
  
+    </script>
+<!---------------------------------------------------------------------------------->
+
 
 
 
@@ -49,6 +93,8 @@
 
         
       </footer>
+
+      <script type="text/javascript" src="./js/hamburger.js"></script>
     
 </body>
 
