@@ -146,14 +146,14 @@ header{
 }
 
 .rocket .rocket-body .body{
-    background-color: rgb(255, 229, 244);
+    background-color: rgb(255, 240, 249);
     height: 180px;
     left: calc(50% - 50px);
     border-top-right-radius: 100%;
     border-top-left-radius: 100%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    border-top: 5px solid #a30062;
+    border-top: 5px solid #ff5fbf;
 }
 
 .rocket .rocket-body:before{
@@ -162,7 +162,7 @@ header{
     left: calc(50% - 24px);
     width: 48px;
     height: 13px;
-    background: linear-gradient(to right top, #a30062, #eb79bd); 
+    background: linear-gradient(to right top, #ff68c3, #eb79bd); 
     bottom: -13px;
     border-bottom-right-radius: 60%;
     border-bottom-left-radius: 60%;
@@ -177,7 +177,7 @@ header{
     background-color: rgb(41, 41, 41);
     left: calc(50% - 24px);
     top: 40px;
-    border: 5px solid #a30062;
+    border: 5px solid #fd38ae;
 }
 
 
@@ -197,7 +197,7 @@ header{
     position: absolute;
     height: 55px;
     width: 50px;
-    background: linear-gradient(to right top, #a30062, #eb79bd);
+    background: linear-gradient(to right top, #ff64c1, #eb79bd);
     z-index: -100;
 }
 
@@ -386,7 +386,7 @@ header{
     cursor: pointer;
     margin: 10px;
     border-radius: 90px;
-    transition: 0.7s ease-in-out ;
+    transition: 0.5s ease-in-out ;
 }
 
 .btn:hover{
