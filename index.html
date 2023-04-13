@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/welcome.css" />
     <link rel="stylesheet" href="css/stars.css" />
+    <link rel="stylesheet" href="css/signInUp.css" />
 <!---------------------------------------------------------------------------------->
 
 
@@ -45,7 +46,7 @@
 
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" onclick="openWelcomeMenu()" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">About Us</a>
@@ -59,8 +60,9 @@
             </ul>
         </div>
     </header>
-<!---------------------------------------------------------------------------------->
+<!---------------------------------------content------------------------------------------->
     <div id="content">
+        <!--div sign in & sign up buttons-->
         <div id="welcomePage">
             <div class="rocket">
                 <div class="rocket-body">
@@ -82,19 +84,82 @@
                 </ul>
             </div>
             <div class="buttons">
-                <button id="signUp" class="btn btn1" onclick="toggleSignUp()">
+                <button id="signUpButton" class="btn btn1" onclick="toggleSignUp()">
                     Sign Up
                   </button>
-                  <button id="Login" class="btn btn2" onclick="showLogin()">
+                  <button id="LoginButton" class="btn btn2" onclick="showLogin()">
                     Login
                   </button>
             </div>
         </div>
+        <!----------------------------------->
+
+
+        <!--div sign up window-->
+        <div class="signUpForm">
+            <div class="popup">
+                <div class="close-btn">&times;</div>
+                <div class="form">
+                    <h2> Sign Up</h2>
+
+                    <div class="form-element">
+                        <label for="UserName">User name</label>
+                        <input type="text" id="loginUserName" placeholder="Enter username">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="Password">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter password">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="ConfirmPassword">Confirm Password</label>
+                        <input type="password" id="loginConfirm" placeholder="Confirm password">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="loginName" placeholder="Enter first name">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="loginLast" placeholder="Enter last name">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" placeholder="Enter email">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="birthday">Birth Date</label>
+                        <input type="text" id="datepicker" placeholder="Enter date">
+                        <script>
+                            $(function () {
+                              $("#datepicker").datepicker();
+                            });
+                        </script>
+                    </div>
+
+                    <div class="form-element">
+                        <button>Sign Up</button>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+        <!----------------------------------->
+
         
-    </div>
+    </div> <!--div content closer-->
+    <!--------------------------------content closer----------------------------------------------------------------->
 
 
-<!-----------------------------------draw the move backgroung stars---------------------->
+<!-----------------------------------draw the move backgroung stars--------------------------------------------------->
     <div id="starfield"></div>
     <div id="gamecontainer">
     <canvas id="gameCanvas"></canvas>
@@ -132,6 +197,7 @@
 
 
       <script type="text/javascript" src="./js/hamburger.js"></script>
+      <script type="text/javascript" src="./js/welcome.js"></script>
 <!---------------------------------------------------------------------------------->
 
 </body>
