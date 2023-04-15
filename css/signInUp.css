@@ -2,13 +2,41 @@
 
 
 /*--------------sign up popUp menu----------------------*/
+/*
+.signUpForm{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+
+.cont{
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    background-color: aquamarine;
+    border-radius: 30px;
+}
+
+
+
 
 
 .popup{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+ 
+    justify-content: space-between;
+
     position: absolute;
     font-family: "Open Sans";
     top: -150%;
     left: 50%;
+    
     opacity: 0;
     text-shadow: 2px 2px 2px rgb(235, 177, 211);
     transform: translate(-50%, -50%) scale(1.25);
@@ -25,6 +53,7 @@
 
 
 .popup.active{
+    
     top: 50%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -59,8 +88,9 @@
 
 .popup .form .form-element{
     margin: 5px 0px;
+    
+  
 }
-
 
 .popup .form .form-element label{
     font-size: 14px;
@@ -71,13 +101,14 @@
  .popup .form .form-element input[type="text"], 
  .popup .form .form-element input[type="password"]{
     margin-top: 5px;
-    display: block;
-    width: 70%;
+   
+    /*width: 70%;
     padding: 7px;
     outline: none;
-    zoom: 80%;
 
  }
+
+
 
  .popup .form .form-element button{
     width: 73%;
@@ -92,9 +123,20 @@
     
  }
 
- .popup .form .form-element button a{ 
-
+.popup .form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
  }
 
+.form .form-element{
+    width: calc(100% / 2-20px);
+
+}
+
+.form-element input{
+    height: 45px;
+    width: 100%;
+}
 
 /*--------------login popUp menu----------------------*/

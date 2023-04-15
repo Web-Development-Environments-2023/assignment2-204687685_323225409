@@ -7,7 +7,29 @@
     <title>SpaceInvaders</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+<!--------------------------------JQUERYYYYYY----------------------------------->
+<!--Google's fonts-->
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Abril Fatface|Exo"
+    />
+    <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--Icons-->
+    <script
+    src="https://kit.fontawesome.com/e211f6a94b.js"
+    crossorigin="anonymous"
+    ></script>
 
 
 <!-----------------------------all css conection to the html----------------------------------------------------->
@@ -16,6 +38,7 @@
     <link rel="stylesheet" href="css/welcome.css" />
     <link rel="stylesheet" href="css/stars.css" />
     <link rel="stylesheet" href="css/signInUp.css" />
+    <link rel="stylesheet" href="css/gamePage.css" />
 <!---------------------------------------------------------------------------------->
 
 
@@ -46,13 +69,13 @@
 
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#" onclick="openWelcomeMenu()" class="nav-link">Home</a>
+                    <a href="#" onclick="swhichToDiv('welcomePage')" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Sign Up</a>
+                    <a href="#" onclick="swhichToDiv('signUpForm')" class="nav-link">Sign Up</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Log In</a>
@@ -62,8 +85,8 @@
     </header>
 <!---------------------------------------content------------------------------------------->
     <div id="content">
-        <!--div sign in & sign up buttons-->
-        <div id="welcomePage">
+        <!--div welcome page with the sign in & sign up buttons-->
+        <div id="welcomePage" style="display: none;">
             <div class="rocket">
                 <div class="rocket-body">
                     <div class="body"></div>
@@ -84,20 +107,23 @@
                 </ul>
             </div>
             <div class="buttons">
-                <button id="signUpButton" class="btn btn1" onclick="toggleSignUp()">
+                <button id="signUpButton" class="btn btn1" onclick="">
                     Sign Up
                   </button>
-                  <button id="LoginButton" class="btn btn2" onclick="showLogin()">
+                  <button id="LoginButton" class="btn btn2" onclick="">
                     Login
                   </button>
             </div>
+
+        
+            
         </div>
-        <!----------------------------------->
+        <!---------------------------------------------------->
 
 
-        <!--div sign up window-->
-        <div class="signUpForm">
-            <div class="popup">
+        <!------------------------div of the sign up form---------------------------------------------------------------------->
+        <div id="signUpForm" style="display: none;"> 
+            <div class="popup"> 
                 <div class="close-btn">&times;</div>
                 <div class="form">
                     <h2> Sign Up</h2>
@@ -152,7 +178,18 @@
             </div>
 
         </div>
-        <!----------------------------------->
+        <!----------------------------------------------------------->
+
+        <!------------------------------div on game canvas----------------------------------------->
+
+        <div id="gameDiv" style="display: block;">
+            <canvas id="gameCanvas"> </canvas>
+
+        </div>
+
+
+
+        <!------------------------------------------------------->
 
         
     </div> <!--div content closer-->
@@ -160,18 +197,21 @@
 
 
 <!-----------------------------------draw the move backgroung stars--------------------------------------------------->
+
+
+
     <div id="starfield"></div>
-    <div id="gamecontainer">
-    <canvas id="gameCanvas"></canvas>
+    <div id="starsContainer">
+    <canvas id="starsCanvas"></canvas>
     </div>
     
     <script src="js/starfield.js"></script>
     <script>
 
         //  Create the starfield.
-        var container = document.getElementById('starfield');
+        var container1 = document.getElementById('starfield');
         var starfield = new Starfield();
-        starfield.initialise(container);
+        starfield.initialise(container1);
         starfield.start();
  
     </script>
@@ -192,12 +232,13 @@
         </div>
 
         
-      </footer>
+    </footer>
 <!-------------------------------all javascript connections to the html--------------------------------------------------->
 
 
       <script type="text/javascript" src="./js/hamburger.js"></script>
       <script type="text/javascript" src="./js/welcome.js"></script>
+      <script type="text/javascript" src="./js/spaceinvaders.js"></script>
 <!---------------------------------------------------------------------------------->
 
 </body>

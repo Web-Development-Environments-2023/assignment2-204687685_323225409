@@ -8,6 +8,7 @@ header{
     padding-top: 0.2%;
     box-sizing: border-box;
     font-family: "Open Sans";
+    z-index: 1;
 }
 
 .hamburger-menu{
@@ -113,7 +114,9 @@ header{
 }
 
 .logo{
-    zoom: 20%;   
+    zoom: 20%; 
+    top: 10px;
+    opacity: 0.6;
 }
 
 .names{
@@ -134,7 +137,7 @@ header{
 
 .rocket{
     position: absolute;
-    top: 20%;
+    top: 35%;
     width: 80px;
     left: calc(50% - 50px);
 }
@@ -371,7 +374,6 @@ header{
 
 .buttons{
     text-align: center;
-    margin-top: 670px;
 }
 
 
@@ -395,4 +397,3 @@ header{
     background: rgb(235, 177, 211);
     box-shadow: 0 0 5px #ffb9e3,0 0 20px #ffb9e3, 0 0 40px #ffb9e3, 0 0 80px #ffb9e3 ;
 }
-
