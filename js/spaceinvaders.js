@@ -14,9 +14,14 @@ canvas.height = innerHeight
 const background = new Image()
 background.src = "media/wallpaper.png"
 
+const playerBulletController = new BulletController(canvas, 10, "pink", true)
+
+
+
+
 //instance of enemy
 const enemyController = new EnemyController(canvas)
-const player = new Player(canvas, 3)
+const player = new Player(canvas, 3, playerBulletController)
 
 
 
@@ -25,6 +30,7 @@ function game() {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
     enemyController.draw(ctx)
     player.draw(ctx)
+    playerBulletController.draw(ctx)
 }
 
 
