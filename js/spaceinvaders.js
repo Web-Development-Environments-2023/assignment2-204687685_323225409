@@ -27,11 +27,11 @@ const enemyBulletController = new BulletController(canvas, 1, "white", false)
 //instance of enemy
 const enemyController = new EnemyController(canvas, enemyBulletController, playerBulletController)
 const player = new Player(canvas, 3, playerBulletController)
+let newPlayerPositionX = player.x
 
 
-
-let isGameOver = false;
-let didWin = false;
+let isGameOver = false
+let didWin = false
 
 
 
@@ -64,8 +64,13 @@ function checkGameOver() { //this function checks if bullets hit the player - if
       return
     }
   
-    if (enemyBulletController.collideWith(player)) {
-      isGameOver = true
+    if (enemyBulletController.collideWith(player)) { //update lives and game over
+        player.lives--
+    
+        if(player.lives <=0){
+            isGameOver = true
+        }
+        player.x = newPlayerPositionX
     }
   
     /*if (enemyController.collideWith(player)) {

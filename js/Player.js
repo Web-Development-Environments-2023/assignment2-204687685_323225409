@@ -13,7 +13,7 @@ export default class Player {
         this.canvas = canvas
         this.velocity = 7 //need to increase the speed
         this.bulletController = bulletController;
-
+        this.lives = 3
         //this.x = this.canvas.width / 2
         this.x = Math.floor(Math.random()*(canvas.width-70))
 
