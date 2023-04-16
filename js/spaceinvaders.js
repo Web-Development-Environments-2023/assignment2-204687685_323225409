@@ -4,10 +4,11 @@ import BulletController from "./BulletController.js"
 
 const canvas = document.getElementById('gameCanvas')
 const ctx = canvas.getContext("2d")
-const lblScores = document.getElementById('lblScore')
+//const lblScore = document.getElementById('lblScore')
+// const lblLife = document.getElementById('lblLife')
 
 
-canvas.width = innerWidth
+canvas.width = innerWidth 
 canvas.height = innerHeight
 
 
@@ -35,18 +36,27 @@ let didWin = false
 
 
 
-
+var timeLimit = 180
+var start_time
+var time_elapsed
+start_time = new Date()
 
 //draw the  whole game
 function game() {
-    
+    checkTimeLimit()
     checkGameOver()
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
     lblScore.value = enemyController.score
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    
+    lblLife.value = player.lives
 
     
+    lblTime.value = (timeLimit - time_elapsed)
+	if (lblTime.value < 0){
+		lblTime.value = 0.000
+	}
+   
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     displayGameOver()
     if (!isGameOver){
         enemyController.draw(ctx)
@@ -54,14 +64,23 @@ function game() {
         playerBulletController.draw(ctx)
         enemyBulletController.draw(ctx)
     }
-    
-    
-
 }
+
+
+function checkTimeLimit(){
+	var currentTime = new Date();
+	time_elapsed = (currentTime - start_time) / 1000;
+	if (time_elapsed >= timeLimit){
+		endGame("time");
+	}
+}
+
+
 
 function checkGameOver() { //this function checks if bullets hit the player - if so ->game is over
     if (isGameOver) {
-      return
+        cancelInterval(timer);
+        return
     }
   
     if (enemyBulletController.collideWith(player)) { //update lives and game over
