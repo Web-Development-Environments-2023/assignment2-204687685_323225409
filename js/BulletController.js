@@ -17,7 +17,7 @@ export default class BulletController {
         this.shootSound.volume = 0.9
     }
 
-
+    //draws the playrs shoots
     draw(ctx) {
         this.bullets = this.bullets.filter(
           (bullet) => bullet.y + bullet.width > 0 && bullet.y <= this.canvas.height
@@ -31,6 +31,28 @@ export default class BulletController {
 
 
 
+
+
+    collideWith(sprite) { //get enemy
+      const bulletThatHitSpriteIndex = this.bullets.findIndex((bullet) =>
+        bullet.collideWith(sprite) //if cillide so return the index
+      );
+  
+      if (bulletThatHitSpriteIndex >= 0) {
+        this.bullets.splice(bulletThatHitSpriteIndex, 1); //if the bullet hits the enemy so we removw it from the bullets list
+        return true;
+      }
+  
+      return false; //if bullet not hit the enemy
+    }
+
+
+
+
+
+
+
+      //shhot of player
     shoot(x, y, velocity, timeTillNextBulletAllowed = 0) {
         if (
           this.timeTillNextBulletAllowed <= 0 &&

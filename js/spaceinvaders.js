@@ -14,26 +14,75 @@ canvas.height = innerHeight
 const background = new Image()
 background.src = "media/wallpaper.png"
 
-const playerBulletController = new BulletController(canvas, 10, "pink", true)
+
+//control the bullets of player - color and amount. truc\false=sound
+const playerBulletController = new BulletController(canvas, 20, "purple", true)
+//control the bullets of invaders - color and amount. truc\false=sound
+const enemyBulletController = new BulletController(canvas, 1, "white", false)
 
 
 
 
 //instance of enemy
-const enemyController = new EnemyController(canvas)
+const enemyController = new EnemyController(canvas, enemyBulletController, playerBulletController)
 const player = new Player(canvas, 3, playerBulletController)
 
 
 
+let isGameOver = false;
+let didWin = false;
 
+
+//draw the  whole game
 function game() {
+    checkGameOver()
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
-    enemyController.draw(ctx)
-    player.draw(ctx)
-    playerBulletController.draw(ctx)
+    displayGameOver()
+    if (!isGameOver){
+        enemyController.draw(ctx)
+        player.draw(ctx)
+        playerBulletController.draw(ctx)
+        enemyBulletController.draw(ctx)
+    }
+    
+
+}
+
+function checkGameOver() { //this function checks if bullets hit the player - if so ->game is over
+    if (isGameOver) {
+      return
+    }
+  
+    if (enemyBulletController.collideWith(player)) {
+      isGameOver = true
+    }
+  
+    /*if (enemyController.collideWith(player)) {
+      isGameOver = true
+    }*/
+  
+    if (enemyController.enemyRows.length === 0) {
+      didWin = true
+      isGameOver = true
+    }
+}
+
+function displayGameOver() {
+    if (isGameOver) {
+      let text = didWin ? "You Win" : "Game Over"
+      let textOffset = didWin ? 3.5 : 5
+  
+      ctx.fillStyle = "white"
+      ctx.font = "70px Arial"
+      ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+    }
 }
 
 
+  
+
+
+//control the intervals per second of the game
 setInterval(game, 1000/60)
 
 

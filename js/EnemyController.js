@@ -1,5 +1,5 @@
-import Enemy from "./Enemy.js";
-import MovingDirection from "./MovingDirection.js";
+import Enemy from "./Enemy.js"
+import MovingDirection from "./MovingDirection.js"
 
 export default class EnemyController{
 
@@ -16,18 +16,70 @@ export default class EnemyController{
     currentDirection = MovingDirection.right
     xVelocity = 0
     yVelocity = 0
-    defaultXVelocity = 4
+    defaultXVelocity = 3
     defaultYVelocity = 1
+    
+    fireBulletTimerDefault = 100 //control the time of enemy shooting
+    fireBulletTimer = this.fireBulletTimerDefault
 
-    constructor(canvas){
+
+
+    constructor(canvas, enemyBulletController, playerBulletController){
         this.canvas = canvas
-        this.createEnemies();
+        this.enemyBulletController = enemyBulletController
+        this.playerBulletController = playerBulletController
+
+        this.enemyDeathSound = new Audio("media/shoot2.mp3");
+        this.enemyDeathSound.volume = 0.9;
+
+        this.createEnemies()
+
+        this.canvasHeight = canvas.height
     }
+
+    
+
 
     draw(ctx){
         this.updateVelocityAndDirection()
+        this.collisionDetection() //collision of bullets
         this.drawEnemies(ctx)
+        this.fireBullet()
+
     }
+
+
+
+
+    collisionDetection() {
+        this.enemyRows.forEach((enemyRow) => {
+          enemyRow.forEach((enemy, enemyIndex) => {
+            if (this.playerBulletController.collideWith(enemy)) {
+              this.enemyDeathSound.currentTime = 0;
+              this.enemyDeathSound.play();
+              enemyRow.splice(enemyIndex, 1);
+            }
+          });
+        });
+    
+        this.enemyRows = this.enemyRows.filter((enemyRow) => enemyRow.length > 0); //ypdate the list and remove the dead wnwmy from it
+      }
+
+
+
+
+    fireBullet() {
+        //this.fireBulletTimer = (this.yVelocity) / (this.canvasHeight)*0.6 
+        //console.log(this.fireBulletTimer)
+        this.fireBulletTimer--
+        if (this.fireBulletTimer <= 0) {
+          this.fireBulletTimer = this.fireBulletTimerDefault
+          const allEnemies = this.enemyRows.flat()
+          const enemyIndex = Math.floor(Math.random() * allEnemies.length)
+          const enemy = allEnemies[enemyIndex]
+          this.enemyBulletController.shoot(enemy.x + enemy.width / 2, enemy.y, -3) //random index for which enemy shoot
+        }
+      }
 
 
 
