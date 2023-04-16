@@ -12,6 +12,8 @@ export default class EnemyController{
 
     enemyRows = []
 
+    
+
     //controll the movement of invaders
     currentDirection = MovingDirection.right
     xVelocity = 0
@@ -60,18 +62,23 @@ export default class EnemyController{
         this.enemyRows.forEach((enemyRow) => {
           enemyRow.forEach((enemy, enemyIndex) => {
             // console.log(enemy)
-            console.log(enemyRow)
+            
             if (this.playerBulletController.collideWith(enemy)) {
               this.enemyDeathSound.currentTime = 0
               this.enemyDeathSound.play()
+              console.log(enemyRow)
               enemyRow.splice(enemyIndex, 1)
+              if(enemy.type == 1){ this.score+=5} //set the type of enemy so we know how much points add to score
+              else if(enemy.type == 2){this.score+=10}
+              else if(enemy.type == 3){this.score+=15}
+              else if(enemy.type == 4){this.score+=20}
             }
           })
         })
 
-    
+        //console.log(this.enemyRows )
         this.enemyRows = this.enemyRows.filter((enemyRow) => enemyRow.length > 0); //update the list and remove the dead enwmy from it
-        this.score += 2
+        // this.score += 2
       }
 
 
@@ -100,15 +107,15 @@ export default class EnemyController{
                 const rightMostEnemy = enemyRow[enemyRow.length - 1] //hold the most right enemy in zv line
                 if (rightMostEnemy.x + rightMostEnemy.width >= this.canvas.width){ //if the most right enemy go over thr right side of canvas so we momve it down
                     this.currentDirection = MovingDirection.left
-                    break;
+                    break
                 } 
             } else if (this.currentDirection === MovingDirection.left){
                 //this.xVelocity = 0
                 this.xVelocity = -this.defaultXVelocity
-                const leftMostEnemy = enemyRow[0];
+                const leftMostEnemy = enemyRow[0]
                 if (leftMostEnemy.x <= 0) {
-                    this.currentDirection = MovingDirection.right; //if the most left enemy go over thr right side of canvas so we momve it down
-                    break;
+                    this.currentDirection = MovingDirection.right //if the most left enemy go over thr right side of canvas so we momve it down
+                    break
                 }
             } 
         }
@@ -131,13 +138,16 @@ export default class EnemyController{
         this.enemyMap.forEach( (row,rowIndex) => {
             this.enemyRows[rowIndex] = []
             row.forEach((enemyNumber, enemyIndex) =>{
+                
                 if(enemyNumber >0){
-                    this.enemyRows[rowIndex].push(new Enemy(enemyIndex*65, rowIndex*55, enemyNumber))
-
+                    const newEnemy = new Enemy(enemyIndex*65, rowIndex*55, enemyNumber)
+                    newEnemy.type = enemyNumber
+                    this.enemyRows[rowIndex].push(newEnemy)
                 }
 
             })
         } )
+        
     }
 
 

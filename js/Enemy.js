@@ -7,6 +7,7 @@ export default class Enemy{
 
         this.image = new Image()
         this.image.src = `media/enemy${imageNumber}.png`
+        this.type = 99
 
     }
 
