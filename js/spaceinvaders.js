@@ -11,8 +11,11 @@ canvas.height = innerHeight
 
 
 
-const background = new Image()
-background.src = "media/wallpaper.png"
+const background = new Image() 
+//background.src = "media/wallpaper.png"
+background.style.color = 'transparent'
+//ctx.fillStyle = '#ffffff'
+//background = '#ffffff'
 
 
 //control the bullets of player - color and amount. truc\false=sound
@@ -37,6 +40,7 @@ let didWin = false;
 function game() {
     checkGameOver()
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     displayGameOver()
     if (!isGameOver){
         enemyController.draw(ctx)
