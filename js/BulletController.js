@@ -35,7 +35,7 @@ export default class BulletController {
 
     collideWith(sprite) { //get enemy
       const bulletThatHitSpriteIndex = this.bullets.findIndex((bullet) =>
-        bullet.collideWith(sprite) //if cillide so return the index
+        bullet.collideWith(sprite) //if collide so return the index
       );
   
       if (bulletThatHitSpriteIndex >= 0) {

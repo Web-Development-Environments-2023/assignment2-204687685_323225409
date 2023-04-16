@@ -22,6 +22,9 @@ export default class EnemyController{
     fireBulletTimerDefault = 100 //control the time of enemy shooting
     fireBulletTimer = this.fireBulletTimerDefault
 
+    scoreDefault = 0
+    score = this.scoreDefault
+
 
 
     constructor(canvas, enemyBulletController, playerBulletController){
@@ -35,7 +38,9 @@ export default class EnemyController{
         this.createEnemies()
 
         this.canvasHeight = canvas.height
+
     }
+
 
     
 
@@ -51,18 +56,22 @@ export default class EnemyController{
 
 
 
-    collisionDetection() {
+    collisionDetection() { //remove  dead enemies
         this.enemyRows.forEach((enemyRow) => {
           enemyRow.forEach((enemy, enemyIndex) => {
+            // console.log(enemy)
+            console.log(enemyRow)
             if (this.playerBulletController.collideWith(enemy)) {
-              this.enemyDeathSound.currentTime = 0;
-              this.enemyDeathSound.play();
-              enemyRow.splice(enemyIndex, 1);
+              this.enemyDeathSound.currentTime = 0
+              this.enemyDeathSound.play()
+              enemyRow.splice(enemyIndex, 1)
             }
-          });
-        });
+          })
+        })
+
     
-        this.enemyRows = this.enemyRows.filter((enemyRow) => enemyRow.length > 0); //ypdate the list and remove the dead wnwmy from it
+        this.enemyRows = this.enemyRows.filter((enemyRow) => enemyRow.length > 0); //update the list and remove the dead enwmy from it
+        this.score += 2
       }
 
 

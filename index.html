@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="css/stars.css" />
     <link rel="stylesheet" href="css/signInUp.css" />
     <link rel="stylesheet" href="css/gamePage.css" />
+    <link rel="stylesheet" href="css/score.css" />
 <!---------------------------------------------------------------------------------->
 
 
@@ -183,12 +184,85 @@
         <!------------------------------div on game canvas----------------------------------------->
 
         <div id="gameDiv" style="display: block;">
-            <canvas id="gameCanvas" > </canvas>
-            
-            
+            <div id="gameInfoContainer">
+                <ul id="infolist">
+                    <li>
+                        <label for="lblUser">USER NAME:</label>
+                        <br><br>
+                        <input id="lblUser" type="text" class="gameLbl" />
 
+                    </li>
+                    <br>
+                    <br>
+                    <li>
+                        <label for="lblScore">SCORE:</label>
+                        <br><br>
+                        <input id="lblScore" type="text" class="gameLbl" />
+                        
+                    </li>
+                    <br>
+                    <br>
+                    <li>
+                        <label for="lblTime">TIME REMAIN:</label>
+                        <br><br>
+                        <input id="lblTime" type="text" class="gameLbl" /> 
+                    </li>
+                    <br>
+                    <br>
+                    <li>
+                        <label for="lblLife">LIFE:</label>
+                        <br><br>
+                    <input id="lblLife" type="text" class="gameLbl" />
+                    </li>
+                </ul>
+                      
+            </div>
+                
+            <canvas id="gameCanvas" > </canvas>
+                
    
         </div>
+
+
+
+
+
+
+
+
+<!-- 
+        <div id="gameDivdd" style="display: block;">
+            <div id="gameInfoContainer">
+                <div id="user" class="gameInfo">
+                  <label for="lblUser">USER NAME:</label>
+                  <input id="lblUser" type="text" class="gameLbl" />
+                </div>
+                <div id="score" class="gameInfo">
+                  <label for="lblScores">SCORE:</label>
+                  <input id="lblScores" type="text" class="gameLbl" />
+                </div>
+                <div id="time" class="gameInfo">
+                  <label for="lblTime">TIME REMAIN:</label>
+                  <input id="lblTime" type="text" class="gameLbl" />
+                </div>
+                <div id="life" class="gameInfo">
+                  <label for="lblLife">LIFE:</label>
+                  <input id="lblLife" type="text" class="gameLbl" />
+                </div>
+            </div>
+            <div>
+                <canvas id="gameCanvas" > </canvas>
+            </div>
+            
+
+            
+        </div>
+
+         -->
+
+
+
+        
 
 
 
@@ -225,7 +299,7 @@
 <!----------------------------------footet+share+contact us------------------------------------------------>
 
     <footer >
-        <div class="footer-content">
+        <div class="footer-content" >
             <ul class="socials"> 
                 Share:  <li> <a href="https://www.facebook.com/sharer/sharer.php?u=https://web-development-environments-2023.github.io/assignment2-204687685_323225409/"><i class="fa fa-facebook"></i></a></li>
                 <li> <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://web-development-environments-2023.github.io/assignment2-204687685_323225409/"><i class="fa fa-linkedin"></i></a></li>

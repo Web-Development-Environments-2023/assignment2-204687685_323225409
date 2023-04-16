@@ -4,6 +4,7 @@ import BulletController from "./BulletController.js"
 
 const canvas = document.getElementById('gameCanvas')
 const ctx = canvas.getContext("2d")
+const lblScores = document.getElementById('lblScore')
 
 
 canvas.width = innerWidth
@@ -14,16 +15,13 @@ canvas.height = innerHeight
 const background = new Image() 
 //background.src = "media/wallpaper.png"
 background.style.color = 'transparent'
-//ctx.fillStyle = '#ffffff'
-//background = '#ffffff'
+
 
 
 //control the bullets of player - color and amount. truc\false=sound
 const playerBulletController = new BulletController(canvas, 20, "purple", true)
 //control the bullets of invaders - color and amount. truc\false=sound
 const enemyBulletController = new BulletController(canvas, 1, "white", false)
-
-
 
 
 //instance of enemy
@@ -36,11 +34,19 @@ let isGameOver = false;
 let didWin = false;
 
 
+
+
+
 //draw the  whole game
 function game() {
+    
     checkGameOver()
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
+    lblScore.value = enemyController.score
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    
+
+    
     displayGameOver()
     if (!isGameOver){
         enemyController.draw(ctx)
@@ -48,6 +54,7 @@ function game() {
         playerBulletController.draw(ctx)
         enemyBulletController.draw(ctx)
     }
+    
     
 
 }

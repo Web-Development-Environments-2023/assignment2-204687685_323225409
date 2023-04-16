@@ -11,7 +11,7 @@ export default class Player {
 
     constructor(canvas, velocity, bulletController){
         this.canvas = canvas
-        this.velocity = 3 //need to increase the speed
+        this.velocity = 7 //need to increase the speed
         this.bulletController = bulletController;
 
         //this.x = this.canvas.width / 2
@@ -77,11 +77,6 @@ export default class Player {
             this.y = this.canvas.height - this.height;
           }
       }
-
-
-
-
-
 
 
 
