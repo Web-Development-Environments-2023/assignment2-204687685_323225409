@@ -117,7 +117,11 @@ header{
     zoom: 20%; 
     top: 10px;
     opacity: 0.6;
+    /* animation: bounce 0.4s infinite; */
+    
+    
 }
+
 
 .names{
     font-family: "Open Sans";
@@ -131,6 +135,8 @@ header{
     margin-top: 0.5%;
     color: aliceblue;
     text-shadow: 2px 4px 4px rgb(235, 177, 211);
+
+    
 }
 
 /*-------------------------------------------animation of rocket-------------------------------------------------------*/

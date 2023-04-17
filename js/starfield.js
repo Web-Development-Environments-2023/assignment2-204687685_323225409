@@ -8,9 +8,10 @@ function Starfield() {
 	this.canvas = null;
 	this.width = 0;
 	this.width = 0;
-	this.minVelocity = 15;
-	this.maxVelocity = 30;
-	this.stars = 100;
+	this.minVelocity = 10;
+	this.maxVelocity = 100;
+	// this.stars = 100;
+	this.stars = 50;
 	this.intervalId = 0;
 }
 
@@ -81,12 +82,15 @@ Starfield.prototype.draw = function() {
 	var ctx = this.canvas.getContext("2d");
 
 	//	Draw the background.
-	ctx.fillStyle = 'rgb(35, 35, 35)';
+	// ctx.fillStyle = 'rgb(35, 35, 35)';
+	ctx.fillStyle = 'rgb(0, 0, 0)';
+
 	 
 	ctx.fillRect(0, 0, this.width, this.height);
 
 	//	Draw stars.
 	ctx.fillStyle = '#ffffff';
+	// ctx.fillStyle = 'rgb(255, 187, 223)';
 	for(var i=0; i<this.stars.length;i++) {
 		var star = this.stars[i];
 		ctx.fillRect(star.x, star.y, star.size, star.size);

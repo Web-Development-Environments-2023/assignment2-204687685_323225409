@@ -20,9 +20,9 @@ background.style.color = 'transparent'
 
 
 //control the bullets of player - color and amount. truc\false=sound
-const playerBulletController = new BulletController(canvas, 20, "purple", true)
+const playerBulletController = new BulletController(canvas, 20, "yellow", true)
 //control the bullets of invaders - color and amount. truc\false=sound
-const enemyBulletController = new BulletController(canvas, 1, "white", false)
+const enemyBulletController = new BulletController(canvas, 1, "red", false)
 
 
 //instance of enemy
