@@ -117,7 +117,7 @@ header{
     zoom: 20%; 
     top: 10px;
     opacity: 0.6;
-    /* animation: bounce 0.4s infinite; */
+    animation: bounce 0.4s infinite;
     
     
 }

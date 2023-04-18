@@ -78,7 +78,6 @@ export default class EnemyController{
 
         //console.log(this.enemyRows )
         this.enemyRows = this.enemyRows.filter((enemyRow) => enemyRow.length > 0); //update the list and remove the dead enwmy from it
-        // this.score += 2
       }
 
 
@@ -93,7 +92,7 @@ export default class EnemyController{
           const allEnemies = this.enemyRows.flat()
           const enemyIndex = Math.floor(Math.random() * allEnemies.length)
           const enemy = allEnemies[enemyIndex]
-          this.enemyBulletController.shoot(enemy.x + enemy.width / 2, enemy.y, -3) //random index for which enemy shoot
+          this.enemyBulletController.shoot(enemy.x + enemy.width / 2, enemy.y, -4) //random index for which enemy shoot
         }
       }
 

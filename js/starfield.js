@@ -11,7 +11,7 @@ function Starfield() {
 	this.minVelocity = 10;
 	this.maxVelocity = 100;
 	// this.stars = 100;
-	this.stars = 50;
+	this.stars = 150;
 	this.intervalId = 0;
 }
 
@@ -83,7 +83,7 @@ Starfield.prototype.draw = function() {
 
 	//	Draw the background.
 	// ctx.fillStyle = 'rgb(35, 35, 35)';
-	ctx.fillStyle = 'rgb(0, 0, 0)';
+	ctx.fillStyle = 'rgb(20, 20, 20)';
 
 	 
 	ctx.fillRect(0, 0, this.width, this.height);

@@ -14,7 +14,8 @@ canvas.height = innerHeight
 
 
 const background = new Image() 
-//background.src = "media/wallpaper.png"
+// background.src = "media/space.png"
+
 background.style.color = 'transparent'
 
 
@@ -33,13 +34,16 @@ let newPlayerPositionX = player.x
 
 let isGameOver = false
 let didWin = false
+let isLivesOver = false
+let isTimeOver = false
 
 
-
-var timeLimit = 180
+//timer vars
+var timeLimit = 200
 var start_time
 var time_elapsed
 start_time = new Date()
+
 
 //draw the  whole game
 function game() {
@@ -50,8 +54,8 @@ function game() {
     lblLife.value = player.lives
 
     
-    lblTime.value = (timeLimit - time_elapsed)
-	if (lblTime.value < 0){
+    lblTime.value = (timeLimit - time_elapsed).toPrecision(3) 
+	if (lblTime.value <= 0){
 		lblTime.value = 0.000
 	}
    
@@ -67,11 +71,12 @@ function game() {
 }
 
 
+//coundown the game time
 function checkTimeLimit(){
 	var currentTime = new Date();
 	time_elapsed = (currentTime - start_time) / 1000;
 	if (time_elapsed >= timeLimit){
-		endGame("time");
+        isGameOver = true
 	}
 }
 
@@ -79,7 +84,6 @@ function checkTimeLimit(){
 
 function checkGameOver() { //this function checks if bullets hit the player - if so ->game is over
     if (isGameOver) {
-        cancelInterval(timer);
         return
     }
   
@@ -87,31 +91,55 @@ function checkGameOver() { //this function checks if bullets hit the player - if
         player.lives--
     
         if(player.lives <=0){
+            // isLivesOver = true
             isGameOver = true
         }
         player.x = newPlayerPositionX
     }
   
-    /*if (enemyController.collideWith(player)) {
-      isGameOver = true
-    }*/
-  
     if (enemyController.enemyRows.length === 0) {
       didWin = true
       isGameOver = true
     }
+
+  
 }
+
+
+
 
 function displayGameOver() {
     if (isGameOver) {
-      let text = didWin ? "You Win" : "Game Over"
+      let text = didWin ? "You Win" : "Game Over" 
       let textOffset = didWin ? 3.5 : 5
   
       ctx.fillStyle = "white"
       ctx.font = "70px Arial"
       ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
     }
+
+    // if(isLivesOver && isGameOver ){
+    //     let text = "You Lost"
+    //     // let textOffset =  3.5 : 5
+    
+    //     ctx.fillStyle = "white"
+    //     ctx.font = "70px Arial"
+    //     ctx.fillText(text, canvas.width , canvas.height / 2)
+
+    // }
 }
+
+
+// function displayGameOver() {
+//     if (isGameOver) {
+//       let text = didWin ? "You Win" : "Game Over" 
+//       let textOffset = didWin ? 3.5 : 5
+  
+//       ctx.fillStyle = "white"
+//       ctx.font = "70px Arial"
+//       ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+//     }
+// }
 
 
   

@@ -7,7 +7,8 @@
     width: 70%;
     height: 62%;
     margin: 0% 0% 0% 20%;
-    box-shadow: 0 0 5px #ffcde8,0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 30px #ffe9fc ;
+    /* box-shadow: 0 0 5px #ffcde8,0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 30px #ffe9fc ; */
+    /* box-shadow: 0 0 5px ,0 0 5px , 0 0 10px , 0 0 30px #2b2a2a ; */
     border-radius: 30px;
 
     

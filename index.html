@@ -123,57 +123,59 @@
 
 
         <!------------------------div of the sign up form---------------------------------------------------------------------->
-        <div id="signUpForm" style="display: none;"> 
-            <div class="popup"> 
-                <div class="close-btn">&times;</div>
-                <div class="form">
-                    <h2> Sign Up</h2>
+        <div id="signUpForm" style="display: block;"> 
+            <div class="signContainer"> 
+                <h2 class="form-title"> Sign Up</h2>
+                <!-- <div class="close-btn">&times;</div> -->
+                <form action="#">
+                    <div class="main-user-info">
 
-                    <div class="form-element">
-                        <label for="UserName">User name</label>
-                        <input type="text" id="loginUserName" placeholder="Enter username">
+                        <div class="user-input-box">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" placeholder="Enter first name">
+                        </div>
+    
+                        <div class="user-input-box">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" placeholder="Enter last name">
+                        </div>
+
+                        <div class="user-input-box">
+                            <label for="UserName">User name</label>
+                            <input type="text" id="UserName" placeholder="Enter username"> 
+                        </div>
+
+                        <div class="user-input-box">
+                            <label for="Password">Password</label>
+                            <input type="password" id="Password" placeholder="Enter password">
+                        </div>
+    
+                        <div class="user-input-box">
+                            <label for="ConfirmPassword">Confirm Password</label>
+                            <input type="password" id="ConfirmPassword" placeholder="Confirm password">
+                        </div>
+    
+                            
+                        <div class="user-input-box">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" placeholder="Enter email">
+                        </div>
+    
+                        <div class="user-input-box">
+                            <label for="birthday">Birth Date</label>
+                            <input type="text" id="birthday" placeholder="Enter date">
+                            <script>
+                                $(function () {
+                                  $("#datepicker").datepicker();
+                                });
+                            </script>
+                        </div>
                     </div>
-
-                    <div class="form-element">
-                        <label for="Password">Password</label>
-                        <input type="password" id="loginPassword" placeholder="Enter password">
+                    <div class="form-submit-btn">
+                        <input type="submit" value="Register">
+                        
                     </div>
-
-                    <div class="form-element">
-                        <label for="ConfirmPassword">Confirm Password</label>
-                        <input type="password" id="loginConfirm" placeholder="Confirm password">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="loginName" placeholder="Enter first name">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="loginLast" placeholder="Enter last name">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" placeholder="Enter email">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="birthday">Birth Date</label>
-                        <input type="text" id="datepicker" placeholder="Enter date">
-                        <script>
-                            $(function () {
-                              $("#datepicker").datepicker();
-                            });
-                        </script>
-                    </div>
-
-                    <div class="form-element">
-                        <button>Sign Up</button>
-                    </div>
-                    
-
+        
                 </div>
 
             </div>
@@ -183,7 +185,7 @@
 
         <!------------------------------div on game canvas----------------------------------------->
 
-        <div id="gameDiv" style="display: block;">
+        <div id="gameDiv" style="display: none;">
             <div id="gameInfoContainer">
                 <ul id="infolist">
                     <li>
@@ -203,7 +205,7 @@
                     <br>
                     <br>
                     <li>
-                        <label for="lblTime">TIME REMAIN:</label>
+                        <label for="lblTime">SECONDS:</label>
                         <br><br>
                         <input id="lblTime" type="text" class="gameLbl" /> 
                     </li>
@@ -226,49 +228,6 @@
 
 
 
-
-
-
-
-<!-- 
-        <div id="gameDivdd" style="display: block;">
-            <div id="gameInfoContainer">
-                <div id="user" class="gameInfo">
-                  <label for="lblUser">USER NAME:</label>
-                  <input id="lblUser" type="text" class="gameLbl" />
-                </div>
-                <div id="score" class="gameInfo">
-                  <label for="lblScores">SCORE:</label>
-                  <input id="lblScores" type="text" class="gameLbl" />
-                </div>
-                <div id="time" class="gameInfo">
-                  <label for="lblTime">TIME REMAIN:</label>
-                  <input id="lblTime" type="text" class="gameLbl" />
-                </div>
-                <div id="life" class="gameInfo">
-                  <label for="lblLife">LIFE:</label>
-                  <input id="lblLife" type="text" class="gameLbl" />
-                </div>
-            </div>
-            <div>
-                <canvas id="gameCanvas" > </canvas>
-            </div>
-            
-
-            
-        </div>
-
-         -->
-
-
-
-        
-
-
-
-        <!------------------------------------------------------->
-
-        
     </div> <!--div content closer-->
     <!--------------------------------content closer----------------------------------------------------------------->
 
