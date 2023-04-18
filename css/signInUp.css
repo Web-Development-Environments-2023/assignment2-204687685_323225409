@@ -1,14 +1,14 @@
 
 
+/* 88888888888888888888888888888888888888888888888888888888888888888888888888888 */
 
-/*--------------sign up popUp menu----------------------*/
-/* .signUpForm{
+
+#signUpForm{
+    /* zoom: 70%; */
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
-} */
-
+}
 
 
 .signContainer{
@@ -19,17 +19,19 @@
     margin: 0 28px;
     border-radius: 30px;
     box-shadow: inset -2px 2px 2px rgb(20, 20, 20);
+    zoom: 75%;
+    font-family: "Open Sans";
 
 }
 
 .form-title{
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 600;
     text-align: center;
-    padding-bottom: 6px;
-    color: white;
-    text-shadow: 2px 2px 2px rgb(245, 171, 208);
-    border-bottom: solid 1px white;
+    padding-bottom: 10px;
+    color: aliceblue;
+    text-shadow: 2px 4px 4px rgb(235, 177, 211);
+    border-bottom: solid 2px rgb(223, 98, 171);
 
 }
 
@@ -37,7 +39,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 2px 0;
+    
 
 }
 
@@ -50,7 +53,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 50%;
-    padding-bottom: 15px;
+    padding-bottom: 3px;
 
 }
 
@@ -58,19 +61,21 @@
 .user-input-box label{
     width: 95%;
     color: white;
-    font-size: 20px;
-    font-weight: 400;
-    margin: 5px;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 3px;
+    text-shadow: 2px 4px 4px rgb(235, 177, 211);
+    
 }
 
 
 .user-input-box input{
-    height: 40px;
-    width: 95%;
-    border-radius: 7px;
+    height: 35px;
+    width: 85%;
+    border-radius: 30px;
     outline: none;
-    border: 1px solid grey;
-    padding: 0 10px;
+    border: 2px solid rgb(255, 205, 227);
+    padding: 0 10px ;
 
 }
 
@@ -81,7 +86,8 @@
 
 
 .form-submit-btn{
-    margin-top: 40px;
+    margin-top: 20px;
+    
 }
 
 .form-submit-btn input{
@@ -93,14 +99,19 @@
     border: none;
     border-radius: 3px;
     color: beige;
-    background: rgba(63, 114, 76, 0.7);
+    background: rgba(255, 194, 234, 0.7);
+    transition: 0.5s ;
+    border-radius: 30px;
+
 
 }
 
 
 .form-submit-btn input:hover{
-    background: rgba(56, 204, 93, 0.7);
+    background: rgba(179, 255, 198, 0.7);
     color: white;
+    transition: 0.6s;
+    
 
 }
 
@@ -128,12 +139,9 @@
 
     }
 
-
-
-
 }
 
-
+/* 88888888888888888888888888888888888888888888888888888888888888888888888888888 */
 /*
 .signUpForm{
     display: flex;
@@ -237,7 +245,7 @@
     /*width: 70%;
     padding: 7px;
     outline: none;*/
-
+/*
  }
 
 

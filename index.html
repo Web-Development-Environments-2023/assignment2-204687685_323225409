@@ -123,11 +123,79 @@
 
 
         <!------------------------div of the sign up form---------------------------------------------------------------------->
+        <!-- <div id="signUpForm" style="display: block;"> 
+            <div class="popup"> 
+                
+                <div class="form">
+                    <h2><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:#fff; ">Sign Up</span> </h2>
+
+                    <div class="form-element">
+                        <label for="UserName">User name</label>
+                        <br>
+                        <input type="text" id="loginUserName" placeholder="Enter username">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="Password">Password</label>
+                        <br>
+                        <input type="password" id="loginPassword" placeholder="Enter password">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="ConfirmPassword">Confirm Password</label>
+                        <br>
+                        <input type="password" id="loginConfirm" placeholder="Confirm password">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="firstName">First Name</label>
+                        <br>
+                        <input type="text" id="loginName" placeholder="Enter first name">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="lastName">Last Name</label>
+                        <br>
+                        <input type="text" id="loginLast" placeholder="Enter last name">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="text" id="email" placeholder="Enter email">
+                    </div>
+
+                    <div class="form-element">
+                        <label for="birthday">Birth Date</label>
+                        <br>
+                        <input type="text" id="datepicker" placeholder="Enter date">
+                        <script>
+                            $(function () {
+                              $("#datepicker").datepicker();
+                            });
+                        </script>
+                    </div>
+
+                    <div class="form-element">
+                        <br>
+                        <button class="button">Sign Up</button>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+        </div> -->
+
+
+
+
+        <!-- origin -->
         <div id="signUpForm" style="display: block;"> 
             <div class="signContainer"> 
                 <h2 class="form-title"> Sign Up</h2>
-                <!-- <div class="close-btn">&times;</div> -->
-                <form action="#">
+                <form id="signForm" action="#"> 
                     <div class="main-user-info">
 
                         <div class="user-input-box">
@@ -171,12 +239,12 @@
                             </script>
                         </div>
                     </div>
+                    
                     <div class="form-submit-btn">
                         <input type="submit" value="Register">
                         
                     </div>
-        
-                </div>
+                </form>
 
             </div>
 
