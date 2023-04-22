@@ -1,13 +1,16 @@
 header{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     font-weight: bold;
     height: 10%;
     padding-left: 1%;
     padding-right: 1%;
     padding-top: 0.2%;
+    padding-bottom: 1vh;
     box-sizing: border-box;
     font-family: "Open Sans";
+    position: relative;
     z-index: 1;
 }
 
@@ -114,8 +117,13 @@ header{
 }
 
 .logo{
+    position: fixed;
+    left: 3vw;
+    /* left: 35%; */
+    transform: translateX(-50%);
+    /* z-index: 9999; */
     zoom: 20%; 
-    top: 10px;
+    top: 6vh;
     opacity: 0.6;
     animation: bounce 0.4s infinite;
     
@@ -124,19 +132,19 @@ header{
 
 
 .names{
+
     font-family: "Open Sans";
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     flex: 1;
-    text-align: left;
+    text-align: center;
     position: relative;
     font-size: 10px;
-    margin-top: 0.5%;
+    margin-top: 1vh;
     color: aliceblue;
     text-shadow: 2px 4px 4px rgb(235, 177, 211);
-
-    
+  
 }
 
 /*-------------------------------------------animation of rocket-------------------------------------------------------*/

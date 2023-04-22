@@ -228,12 +228,133 @@
 
         <!-- ------------------------------------------------------ -->
         <div id="settingsDiv" style="display: block;">
-            <form>
-                <h7> hiiiiiiiiiiiiiiiii</h7>
 
-            </form>
+            <div id="faq">
+                <h4 id="titleAccordion">Settings</h4>
+                <!-- <h1>Settings</h1> -->
+                <ul>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h5>Keyboard</h5>
+                    <p>
+                        <label>Shoots key:</label>
+                        <input type="text" id="up" class="kbrd" maxlength="1" onkeydown="setUserUp(event)" value="ArrowUp"/>
+                    </p>
+                  </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h5>Time</h5>
+                    <p>
+                        <label>Minutes:</label>
+                        <input type="number" id="minutes" min="1" max="9" value="1" />
+                    </p>
+                  </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h5>Sound</h5>
+                    <p>
+                        Volume:
+                        <input type="range" min="0" max="100" value="50" class="soundSlider" id="soundValue" oninput="changeVolume()"/>
+                        <span id="volumeValue"></span>
+                        <!-- <input type="checkbox" id="soundOff" name="soundOff" value="Sound off" /> -->
+                        <!-- <label id="lblOff" for="soundOff">Sound Off</label><br /> -->
+                    </p>
+                    
+                  </li>
+                </ul>
+              </div>
+
+            <!-- <h3 id="titleAccordion">Settings</h3>
+
+            <div class="accordion">
+                <div class="contentBx">
+
+                    <div class="labell">Keyboard</div>
+                        <div class="user-box">
+                            <label>Shoots key:</label>
+                            <input type="text" id="up" class="kbrd" maxlength="1" onkeydown="setUserUp(event)" value="ArrowUp"/>
+                        </div>
+
+                </div>
+
+            </div> -->
+
+            <!-- <section >
+                <div class="faq"> 
+                    <div class="question">
+                        <h4 id="titleAccordion">Keyboard</h4>
+                        <svg width="15" height="10" viewBox="0 0 42 25">
+                            <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="answer">
+                        <div class="user-input-box">
+                            <label>Shoots key:</label>
+                            <input type="text" id="up" class="kbrd" maxlength="1" onkeydown="setUserUp(event)" value="ArrowUp"/>
+                        </div>
+                       
+                    </div> 
+                </div>
+
+
+                <div class="faq"> 
+                    <div class="question">
+                        <h4 id="titleAccordion">Time</h4>
+                        <svg width="15" height="10" viewBox="0 0 42 25">
+                            <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <div class="answer">
+                        <div class="user-input-box">
+                            <label>Minutes:</label>
+                            <input type="number" id="minutes" min="1" max="9" value="1" />
+                        </div>
+
+                        <div class="user-input-box">
+                            <label>Seconds:</label>
+                            <input type="number" id="seconds" min="0" max="55" step="5" value="0"/>
+                        </div>
+                    </div> 
+                </div>
+
+
+                <div class="faq"> 
+                    <div class="question">
+                        <h4 id="titleAccordion">Sound</h4>
+                        <svg width="15" height="10" viewBox="0 0 42 25">
+                            <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <div class="answer">
+                        <div class="user-input-box">
+                            <p>Volume:</p>
+                            <input
+                            type="range" min="0" max="100" value="50" class="soundSlider" id="soundValue" oninput="changeVolume()"/>
+                        </div>
+
+                        <div class="user-input-box">
+                            <p><span id="volumeValue"></span></p>
+                            <input type="checkbox" id="soundOff" name="soundOff" value="Sound off" />
+                            <label id="lblOff" for="soundOff">Sound Off</label><br />
+                        </div>
+
+                    </div>
+
+                     
+                </div>
+
+
+            </section> -->
+
             
 
+            
+         
         </div>
 
 
@@ -340,6 +461,7 @@
     <script type="module" src="./js/Enemy.js"></script> 
     <script type="text/javascript" src="./js/signUp.js"></script> 
     <script type="text/javascript" src="./js/login.js"></script> 
+    <script type="text/javascript" src="./js/settings.js"></script> 
 
 <!---------------------------------------------------------------------------------->
 
