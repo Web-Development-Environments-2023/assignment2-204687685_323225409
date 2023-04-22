@@ -1,4 +1,11 @@
 /* Styling needed for a fullscreen canvas and no scrollbars. */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
 html { 
     width: 100%;
     height: 100%;

@@ -2,15 +2,30 @@
 
 /* 88888888888888888888888888888888888888888888888888888888888888888888888888888 */
 
-
 #signUpForm{
-    /* zoom: 70%; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    width: 100vh;
+    
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+/* #signUpForm{
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     zoom: 77.5%;
 
-}
+} */
 
 
 .signContainer{
