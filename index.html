@@ -13,6 +13,19 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Abril Fatface|Exo"
     />
+
+    <!-- jquery for form-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+
     <link
     rel="stylesheet"
     href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -20,11 +33,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
-    <link
-    rel="stylesheet"
-    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
+
     <!--Icons-->
     <script
     src="https://kit.fontawesome.com/e211f6a94b.js"
@@ -60,6 +70,7 @@
             </h1>
     
         </div>
+        <!-- menu -->
 
         <div class="navbar">
             <div class="hamburger-menu">
@@ -79,7 +90,8 @@
                     <a href="#" onclick="swhichToDiv('signUpForm')" class="nav-link">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Log In</a>
+                    <a href="#" onclick="swhichToDiv('loginForm')" class="nav-link">Login</a>
+                    
                 </li>
             </ul>
         </div>
@@ -123,118 +135,50 @@
 
 
         <!------------------------div of the sign up form---------------------------------------------------------------------->
-        <!-- <div id="signUpForm" style="display: block;"> 
-            <div class="popup"> 
-                
-                <div class="form">
-                    <h2><span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:#fff; ">Sign Up</span> </h2>
-
-                    <div class="form-element">
-                        <label for="UserName">User name</label>
-                        <br>
-                        <input type="text" id="loginUserName" placeholder="Enter username">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="Password">Password</label>
-                        <br>
-                        <input type="password" id="loginPassword" placeholder="Enter password">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="ConfirmPassword">Confirm Password</label>
-                        <br>
-                        <input type="password" id="loginConfirm" placeholder="Confirm password">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="firstName">First Name</label>
-                        <br>
-                        <input type="text" id="loginName" placeholder="Enter first name">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="lastName">Last Name</label>
-                        <br>
-                        <input type="text" id="loginLast" placeholder="Enter last name">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="email">Email</label>
-                        <br>
-                        <input type="text" id="email" placeholder="Enter email">
-                    </div>
-
-                    <div class="form-element">
-                        <label for="birthday">Birth Date</label>
-                        <br>
-                        <input type="text" id="datepicker" placeholder="Enter date">
-                        <script>
-                            $(function () {
-                              $("#datepicker").datepicker();
-                            });
-                        </script>
-                    </div>
-
-                    <div class="form-element">
-                        <br>
-                        <button class="button">Sign Up</button>
-                    </div>
-                    
-
-                </div>
-
-            </div>
-
-        </div> -->
-
-
-
-
-        <!-- origin -->
+      
         <div id="signUpForm" style="display: block;"> 
             <div class="signContainer"> 
                 <h2 class="form-title"> Sign Up</h2>
-                <form id="signForm" action="#"> 
+                <form id="signForm" action="#" onsubmit="resetRegisterForm()"> 
                     <div class="main-user-info">
 
                         <div class="user-input-box">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" placeholder="Enter first name">
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter first name">
                         </div>
     
                         <div class="user-input-box">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" placeholder="Enter last name">
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter last name">
                         </div>
 
                         <div class="user-input-box">
                             <label for="UserName">User name</label>
-                            <input type="text" id="UserName" placeholder="Enter username"> 
+                            <input type="text" id="UserName" name="UserName" placeholder="Enter username"> 
+                        </div>
+
+                        <div class="user-input-box">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Enter email">
                         </div>
 
                         <div class="user-input-box">
                             <label for="Password">Password</label>
-                            <input type="password" id="Password" placeholder="Enter password">
+                            <input type="password" id="Password" name="Password" placeholder="Enter password">
                         </div>
     
                         <div class="user-input-box">
                             <label for="ConfirmPassword">Confirm Password</label>
-                            <input type="password" id="ConfirmPassword" placeholder="Confirm password">
+                            <input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm password">
                         </div>
     
-                            
-                        <div class="user-input-box">
-                            <label for="email">Email</label>
-                            <input type="text" id="email" placeholder="Enter email">
-                        </div>
     
                         <div class="user-input-box">
                             <label for="birthday">Birth Date</label>
-                            <input type="text" id="birthday" placeholder="Enter date">
+                            <input type="text" id="birthday" name="birthday" placeholder="Enter date">
                             <script>
                                 $(function () {
-                                  $("#datepicker").datepicker();
+                                    $("#birthday").datepicker();
                                 });
                             </script>
                         </div>
@@ -242,7 +186,6 @@
                     
                     <div class="form-submit-btn">
                         <input type="submit" value="Register">
-                        
                     </div>
                 </form>
 
@@ -250,6 +193,46 @@
 
         </div>
         <!----------------------------------------------------------->
+
+        <!-- ------------------------------div of login------------------------------------------------------------------->
+        <div id="loginForm" style="display: none;"> 
+            <div class="signContainer"> 
+
+                <!-- <button class="close-btn">B</button> -->
+
+                <h2 class="form-title"> Login</h2>
+                <form id="signForm" action="#"> 
+                    <div class="main-user-info">
+
+                        <div class="user-input-box">
+                            <label for="UserName">User name</label>
+                            <input type="text" id="UserName" placeholder="Enter username" required> 
+                        </div>
+
+                        <div class="user-input-box">
+                            <label for="Password">Password</label>
+                            <input type="password" id="Password" placeholder="Enter password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-submit-btn">
+                        <input type="submit" value="Login">
+                        
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- ------------------------------------------------------ -->
+
+
+
+
+
+
+
 
         <!------------------------------div on game canvas----------------------------------------->
 
@@ -338,13 +321,15 @@
         
     </footer>
 <!-------------------------------all javascript connections to the html--------------------------------------------------->
-
-
-      <script type="text/javascript" src="./js/hamburger.js"></script>
-      <script type="text/javascript" src="./js/welcome.js"></script>
-      <script type="module" src="./js/spaceinvaders.js"></script>
-      <script type="module" src="./js/EnemyController.js"></script> 
-      <script type="module" src="./js/Enemy.js"></script> 
+    
+    
+    
+            <!-- javascript files -->
+    <script type="text/javascript" src="./js/hamburger.js"></script>
+    <script type="text/javascript" src="./js/welcome.js"></script>
+    <script type="module" src="./js/spaceinvaders.js"></script>
+    <script type="module" src="./js/EnemyController.js"></script> 
+    <script type="module" src="./js/Enemy.js"></script> 
 <!---------------------------------------------------------------------------------->
 
 </body>
