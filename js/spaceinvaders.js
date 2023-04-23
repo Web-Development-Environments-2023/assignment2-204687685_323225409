@@ -18,6 +18,10 @@ const background = new Image()
 
 background.style.color = 'transparent'
 
+let mySound = new Audio('/media/music2.mp3')
+mySound.volume=0.3
+
+
 
 
 //control the bullets of player - color and amount. truc\false=sound
@@ -36,10 +40,13 @@ let isGameOver = false
 let didWin = false
 let isLivesOver = false
 let isTimeOver = false
+let option1=false//ani
+let option2=false//ani
+let option3=false//ani
 
 
 //timer vars
-var timeLimit = 200
+var timeLimit =25
 var start_time
 var time_elapsed
 start_time = new Date()
@@ -47,9 +54,11 @@ start_time = new Date()
 
 //draw the  whole game
 function game() {
+    
     checkTimeLimit()
     checkGameOver()
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
+    
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height) 
     lblScore.value = enemyController.score
     lblLife.value = player.lives
 
@@ -57,16 +66,19 @@ function game() {
     lblTime.value = (timeLimit - time_elapsed).toPrecision(3) 
 	if (lblTime.value <= 0){
 		lblTime.value = 0.000
+        timeLimit=0
 	}
    
 
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     displayGameOver()
+    
     if (!isGameOver){
         enemyController.draw(ctx)
         player.draw(ctx)
         playerBulletController.draw(ctx)
         enemyBulletController.draw(ctx)
+        mySound.play()//hosafti
     }
 }
 
@@ -77,6 +89,7 @@ function checkTimeLimit(){
 	time_elapsed = (currentTime - start_time) / 1000;
 	if (time_elapsed >= timeLimit){
         isGameOver = true
+        //hosafti
 	}
 }
 
@@ -90,16 +103,32 @@ function checkGameOver() { //this function checks if bullets hit the player - if
     if (enemyBulletController.collideWith(player)) { //update lives and game over
         player.lives--
     
-        if(player.lives <=0){
-            // isLivesOver = true
+        if(player.lives <=0){//hosafti ifim
+            isLivesOver = true
             isGameOver = true
+            option1=true//ani
         }
         player.x = newPlayerPositionX
     }
-  
+    
+
+    if ((timeLimit-time_elapsed)<=0.02){
+        if (enemyController.score>=100){
+            isGameOver=true
+            option2=true
+            
+            
+        }
+        else{
+            isGameOver=true
+            option3=true
+        }
+    }
+    
     if (enemyController.enemyRows.length === 0) {
       didWin = true
       isGameOver = true
+      timeLimit=0
     }
 
   
@@ -110,12 +139,44 @@ function checkGameOver() { //this function checks if bullets hit the player - if
 
 function displayGameOver() {
     if (isGameOver) {
-      let text = didWin ? "You Win" : "Game Over" 
-      let textOffset = didWin ? 3.5 : 5
-  
-      ctx.fillStyle = "white"
-      ctx.font = "70px Arial"
-      ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+        mySound.pause()
+        if (option1){
+            timeLimit=0
+
+            let text = "You Lost" 
+            let textOffset = 5
+        
+            ctx.fillStyle = "#ff68c3"
+            ctx.font = "70px Arial"
+            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+
+        }
+        if(option2){
+            let text = "Winner" 
+            let textOffset = 5
+        
+            ctx.fillStyle = "#ff68c3"
+            ctx.font = "70px Arial"
+            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+            
+        }
+        if(option3){
+            let text = "You can do better" 
+            let textOffset = 5
+        
+            ctx.fillStyle = "#ff68c3"
+            ctx.font = "70px Arial"
+            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+        }
+        if(didWin){
+            let text = "Champion" 
+            let textOffset = 5
+        
+            ctx.fillStyle = "#ff68c3"
+            ctx.font = "70px Arial"
+            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+        }
+      
     }
 
     // if(isLivesOver && isGameOver ){
