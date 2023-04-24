@@ -46,7 +46,7 @@ let option3=false//ani
 
 
 //timer vars
-var timeLimit =25
+var timeLimit =8
 var start_time
 var time_elapsed
 start_time = new Date()
@@ -57,29 +57,33 @@ function game() {
     
     checkTimeLimit()
     checkGameOver()
-    
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height) 
-    lblScore.value = enemyController.score
-    lblLife.value = player.lives
-
-    
-    lblTime.value = (timeLimit - time_elapsed).toPrecision(3) 
-	if (lblTime.value <= 0){
-		lblTime.value = 0.000
-        timeLimit=0
-	}
-   
-
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     displayGameOver()
     
+
     if (!isGameOver){
-        enemyController.draw(ctx)
+        drawAllGame()
+    }
+}
+
+
+function drawAllGame(){ // till game is on we continue draw it all
+    
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height) 
+    enemyController.draw(ctx)
         player.draw(ctx)
         playerBulletController.draw(ctx)
         enemyBulletController.draw(ctx)
-        mySound.play()//hosafti
-    }
+        mySound.play()
+
+        lblScore.value = enemyController.score
+        lblLife.value = player.lives
+
+        lblTime.value = (timeLimit - time_elapsed).toPrecision(3) 
+        if (lblTime.value <= 0){
+            lblTime.value = 0.000
+            timeLimit=0
+        }
 }
 
 
@@ -89,7 +93,6 @@ function checkTimeLimit(){
 	time_elapsed = (currentTime - start_time) / 1000;
 	if (time_elapsed >= timeLimit){
         isGameOver = true
-        //hosafti
 	}
 }
 
