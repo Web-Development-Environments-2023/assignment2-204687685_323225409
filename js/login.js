@@ -10,8 +10,8 @@ function submitLogin(){
     currLogged = userName;
     if (userName in registeredUsers){
         if(registeredUsers[userName] == password){
-            loginSubmmition.addEventListener("click", function() {swhichToDiv('settingsDiv')}, false)
-            // submitHandler:{
+            moveToSettings()
+                        // submitHandler:{
             //     $('#loginForm').fadeOut();
             //     $('#settingsDiv').delay(550).show(0);
             // }
@@ -26,3 +26,11 @@ function submitLogin(){
     }
     return false;
 }
+
+
+
+function moveToSettings(){
+    $("#loginForm").hide()
+    $("#settingsDiv").show()
+}
+  

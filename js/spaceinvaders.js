@@ -20,7 +20,7 @@ background.style.color = 'transparent'
 
 let mySound = new Audio('/media/music2.mp3')
 mySound.volume=0.3
-
+const countdown = document.createElement('div');
 
 
 
@@ -38,8 +38,7 @@ let newPlayerPositionX = player.x
 
 let isGameOver = false
 let didWin = false
-let isLivesOver = false
-let isTimeOver = false
+
 let option1=false//ani
 let option2=false//ani
 let option3=false//ani
@@ -49,6 +48,8 @@ let option3=false//ani
 var timeLimit =8
 var start_time
 var time_elapsed
+
+var intervalTimer
 start_time = new Date()
 
 
@@ -98,8 +99,13 @@ function checkTimeLimit(){
 
 
 
+
+
+
+
 function checkGameOver() { //this function checks if bullets hit the player - if so ->game is over
     if (isGameOver) {
+
         return
     }
   
@@ -137,12 +143,15 @@ function checkGameOver() { //this function checks if bullets hit the player - if
   
 }
 
-
+function stopAudio() {
+    mySound.pause(); // Pause the audio
+    mySound.currentTime = 0; // Reset the audio to the beginning
+  }
 
 
 function displayGameOver() {
     if (isGameOver) {
-        mySound.pause()
+        mySound.stopAudio
         if (option1){
             timeLimit=0
 
@@ -181,174 +190,24 @@ function displayGameOver() {
         }
       
     }
-
-    // if(isLivesOver && isGameOver ){
-    //     let text = "You Lost"
-    //     // let textOffset =  3.5 : 5
-    
-    //     ctx.fillStyle = "white"
-    //     ctx.font = "70px Arial"
-    //     ctx.fillText(text, canvas.width , canvas.height / 2)
-
-    // }
 }
 
-
-// function displayGameOver() {
-//     if (isGameOver) {
-//       let text = didWin ? "You Win" : "Game Over" 
-//       let textOffset = didWin ? 3.5 : 5
-  
-//       ctx.fillStyle = "white"
-//       ctx.font = "70px Arial"
-//       ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
-//     }
-// }
-
-
-  
 
 
 //control the intervals per second of the game
-setInterval(game, 1000/60)
+intervalTimer = setInterval(game, 1000/60)
 
 
 
 
 
+// function endGame() {
+//     console.log("WTF?????????????????????????????????????????")
+//     $("#gameDiv").hide();
+// 	$("#signUpPage").show();
 
 
+// }
+  
 
 
-
-
-
-
-
-
-/* thid code is thr video----------------------------------------------------------------------------------
-
-//const canvas2 = document.querySelector('gameCanvas');
-const canvas = document.getElementById('gameCanvas')
-const c = canvas.getContext("2d")
-
-canvas.width = innerWidth
-canvas.height = innerHeight
-//canvas.width = 1000
-//canvas.height = 560
-
-//canvas.style.width='100%'
-
-
-//--------------player class- all settings about the player------------------------------------------------------
-
-class Player{
-    constructor(){ //player constractor
-        
-        this.velocity={ //speed of what?
-            x:0,
-            y:0
-        }
-
-        const image= new Image() // we add image as a player 
-        image.src = './media/player.png'
-       
-        image.onload = () => { //this section control the start posion of player and appearance
-            const scale = 0.15
-
-            this.image = image
-            this.width = image.width * scale
-            this.height = image.height * scale
-
-            this.position={ //random
-                x: Math.floor(Math.random()*(canvas.width-70)),
-                y:canvas.height-100.9
-            }
-        }
-        
-    }
-
-    drawPlayer() { //thsi func draws the player on screen
-        //c.fillStyle = 'red'
-       // c.fillRect(this.position.x, this.position.y, this.width, this.height)
-       if(this.image){
-            c.drawImage(this.image, this.position.x, this.position.y, this.width, this.height)
-       }
-
-    }
-    update () {
-        if(this.image){
-            this.drawPlayer()
-            this.position.x += this.velocity.x
-            this.position.y += this.velocity.y
-        }
-        
-    }
-}
-//------------------------------------------------------
-const player = new Player()
-const keys = {
-    ArrowLeft: {
-        pressed: false
-    },
-    ArrowRight: {
-        pressed: false
-    },
-    ArrowUp: {
-        pressed: false
-    },
-    ArrowDown: {
-        pressed: false
-    }
-}
-//player.drawPlayer()
-
-function animate() { //animate the player on screen
-    requestAnimationFrame(animate)
-    c.fillStyle = 'black'
-    c.fillRect(0,0, canvas.width, canvas.height)
-    player.update()
-
-    if(keys.ArrowLeft.pressed) {
-        player.velocity.x = -8
-    } else {
-        player.velocity.x=0
-    }
-}
-
-animate()
-
-addEventListener('keydown', ({ key }) => {
-    switch(key) {
-        case 'ArrowLeft':
-            console.log('left')
-            player.velocity.x = -8
-            keys.ArrowLeft.pressed = true
-            break
-        case 'ArrowRight':
-            console.log('right')
-            player.velocity.x = 8
-            keys.ArrowRight.pressed = true
-            break
-        case 'ArrowUp':
-            console.log('up')
-            player.velocity.y = -8
-            keys.ArrowUp.pressed = true
-            break
-        case 'ArrowDown':
-            console.log('down')
-            player.velocity.y = 8
-            keys.ArrowDown.pressed = true
-            break
-
-        case ' ': 
-            console.log('space')
-                break
-
-
-    }
-})
-
-
-//---------------------------------------------------------------------------------------
-*/

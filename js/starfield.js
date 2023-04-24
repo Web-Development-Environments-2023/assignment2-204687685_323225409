@@ -11,9 +11,11 @@ function Starfield() {
 	this.minVelocity = 10;
 	this.maxVelocity = 100;
 	// this.stars = 100;
-	this.stars = 150;
+	this.stars = 200;
 	this.intervalId = 0;
 }
+
+
 
 //	The main function - initialises the starfield.
 Starfield.prototype.initialise = function(div) {

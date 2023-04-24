@@ -3,7 +3,7 @@
 //   ---------------------------------------------------------------funcions for sign up ----------------------------------------------------------------------------------------
 
 //users dictionary after sign up. we will add it all sign ups
-var registeredUsers = {"ay":"a1234567"}; //befor hhagasha we need to chang it!!!!!!!!!!!!!!!!!
+var registeredUsers = {"a":"a"}; //befor hhagasha we need to chang it!!!!!!!!!!!!!!!!!
 $(document).ready(function() {
     // $("#gamePage").hide();
     // $("#settingsPage").hide();
