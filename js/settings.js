@@ -12,3 +12,9 @@ for (i=0; i<accordion.length; i++){
 
     })
 }
+
+
+function showGameFromSettings(){
+    $("#settingsDiv").hide()
+    $("#gameDiv").show()
+}
