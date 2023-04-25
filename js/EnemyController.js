@@ -26,6 +26,8 @@ export default class EnemyController{
 
     scoreDefault = 0
     score = this.scoreDefault
+    bulletspeed=-4//control the bullet speed
+
 
 
 
@@ -83,16 +85,17 @@ export default class EnemyController{
 
 
 
-    fireBullet() {
+    fireBullet(speed) {
         //this.fireBulletTimer = (this.yVelocity) / (this.canvasHeight)*0.6 
         //console.log(this.fireBulletTimer)
+        speed=this.bulletspeed//make bullet faster each time  
         this.fireBulletTimer--
         if (this.fireBulletTimer <= 0) {
           this.fireBulletTimer = this.fireBulletTimerDefault
           const allEnemies = this.enemyRows.flat()
           const enemyIndex = Math.floor(Math.random() * allEnemies.length)
           const enemy = allEnemies[enemyIndex]
-          this.enemyBulletController.shoot(enemy.x + enemy.width / 2, enemy.y, -4) //random index for which enemy shoot
+          this.enemyBulletController.shoot(enemy.x + enemy.width / 2, enemy.y,this.bulletspeed ) //random index for which enemy shoot
         }
       }
 
@@ -148,6 +151,15 @@ export default class EnemyController{
         } )
         
     }
+    
+    moveFaster(){//make bullets and enemies move faster
+        
+        this.defaultXVelocity+=2
+        this.bulletspeed-=3
+
+    }
+
+
 
 
     

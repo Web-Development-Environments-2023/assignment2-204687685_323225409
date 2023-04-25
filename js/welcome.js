@@ -58,3 +58,12 @@ function switchToDiv(divToSwitch) { //this is the main function that control the
 //   loginForm.addEventListener("click", function() {swhichToDiv('loginForm')}, false);
 
 
+//mute-unmute functionality
+$('.speaker').click(function(e) {
+    e.preventDefault();
+  
+      $(this).toggleClass('mute');
+  });
+
+
+
