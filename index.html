@@ -66,7 +66,7 @@
             <img src="media\logo.png">
         </div>
         <div class="names">
-            <h1 id="nams"> AYELET & NATALIA
+            <h1 id="nams"> AYELET (204687685) & NATALIA (323225409)
                 <br/>
                 SPACE INVADERS
             </h1>
@@ -101,7 +101,7 @@
 <!---------------------------------------content------------------------------------------->
     <div id="content">
         <!--div welcome page with the sign in & sign up buttons-->
-        <div id="welcomePage" style="display: none;">
+        <div id="welcomePage" style="display: block;">
             <div class="rocket">
                 <div class="rocket-body">
                     <div class="body"></div>
@@ -228,7 +228,7 @@
         </div>
 
         <!-- ------------------------------------------------------ -->
-        <div id="settingsDiv" style="display: block;">
+        <div id="settingsDiv" style="display: none;">
 
             <div id="faq">
                 <h4 id="titleAccordion">Settings</h4>
@@ -249,7 +249,7 @@
                     <h5>Time</h5>
                     <p>
                         <label>Minutes:</label>
-                        <input type="number" id="minutes" min="1" max="9" value="1" />
+                        <input type="number" class="timeSettings" maxlength="1" id="minutes" min="2" max="9" value="2" />
                     </p>
                   </li>
                   <li>
@@ -349,21 +349,23 @@
         <!---------------------------------- The about Modal -------------------------------------------------------------------->
         <!-- <button onclick="window.dialog.showModal();">Show Notification</button> -->
 
-        <dialog id="dialog" >
-            <div class="section full-height">
-                <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
-                <label for="modal-btn">Open Modal <i class="uil uil-expand-arrows"></i></label> 		
-                <div class="modal">		
-                    <div class="modal-wrap">	
-                      <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">	
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>	          		
-                    </div>			          		
-                </div>	
-      
-              <a href="https://front.codes/" class="logo" target="_blank">
-                  <img src="https://assets.codepen.io/1462889/fcy.png" alt="">
-              </a>	
-          </div>
+        <dialog id="dialog" open>
+            <div class="containerA">
+                <a class="button" href="#popup">Open Modal</a>
+                <div class="popup" id="popup">
+                  <div class="popup-inner">
+                    <div class="popup__photo">
+                      <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&s=9980646201037d28700d826b1bd096c4&auto=format&fit=crop&w=700&q=80" alt="">
+                    </div>
+                    <div class="popup__text">
+                      <h1>Lorem ipsum dolor sit amet</h1>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex velit, viverra non vulputate vitae, blandit vitae nisl. Nullam fermentum orci et erat viverra bibendum. Aliquam sed varius nibh, vitae mattis purus. Mauris elementum sapien non ullamcorper vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eget felis sit amet eros viverra pulvinar.</p>
+                    </div>
+                    <a class="popup__close" href="#">X</a>
+                  </div>
+                </div>
+              </div>
+            
 
             <!-- <div class="aboutContainer">
                 <a class="close" href="#" style="color: rgb(255, 3, 179);">&times;</a>
@@ -422,8 +424,8 @@
     <footer id="footer">
         <div class="footer-content" >
             <ul class="socials"> 
-                Share:  <li> <a href="https://www.facebook.com/sharer/sharer.php?u=https://web-development-environments-2023.github.io/assignment2-204687685_323225409/"><i class="fa fa-facebook"></i></a></li>
-                <li> <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://web-development-environments-2023.github.io/assignment2-204687685_323225409/"><i class="fa fa-linkedin"></i></a></li>
+                Share:  <li class="liFooter"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://web-development-environments-2023.github.io/assignment2-204687685_323225409/"><i class="fa fa-facebook"></i></a></li>
+                <li > <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://web-development-environments-2023.github.io/assignment2-204687685_323225409/"><i class="fa fa-linkedin"></i></a></li>
                 <li> <a href="https://twitter.com/intent/tweet?text=Awesome%20Blog!&url=https://web-development-environments-2023.github.io/assignment2-204687685_323225409/"><i class="fa fa-twitter"></i></a></li>
                 <li >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:ayelem@post.bgu.ac.il">Contact Us: &nbsp; <i class="fa fa-envelope"></i></a></li>
             </ul>

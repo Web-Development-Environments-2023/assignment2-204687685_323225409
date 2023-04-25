@@ -1,6 +1,6 @@
 #titleAccordion{
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: bold;
     text-align: center;
     padding-bottom: 2vh;
     color: aliceblue;
@@ -8,11 +8,24 @@
 
   }
 
+
+#shoot ,#minutes{
+  width: 12vw;
+  height: 6vh;
+  border-radius: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+
+
 #faq {
-    max-width: 700vw;
+    max-width: 70vw;
     margin: auto;
     padding: 0 15vh;
     text-align: center;
+    zoom: 85%;
   }
   
   section.faq {
@@ -32,23 +45,17 @@
     -webkit-touch-callout: none;
     user-select: none;
   }
-  
-  /* #faq h1 {
-    color: #000;
-    margin-bottom: 30px;
-    margin-top: 0;
-  } */
-  
+ 
   #faq h5 {
     color: #ff6eca;
     font-family: "Open Sans";
-    font-size: 20px;
+    font-size: 30px;
     line-height: 10vh;
     text-align: left;
-    padding: 15px 15px 0;
+    padding: 1vw 4vh 0;
     text-transform: none;
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-weight: bold;
+    letter-spacing: 3px;
     display: block;
     margin: 0;
     cursor: pointer;
@@ -61,19 +68,19 @@
     color: #dffffc;
     text-align: left;
     font-family: 'hm_light', sans-serif;
-    font-size: 14px;
+    font-size: 30px;
     line-height: 1.45;
     position: relative;
     overflow: hidden;
-    max-height: 250px;
+    max-height: 25vh;
     will-change: max-height;
     contain: layout;
     display: inline-block;
     opacity: 1;
     transform: translate(0, 0);
     margin-top: 5px;
-    margin-bottom: 15px;
-    padding: 0 50px 0 15px;
+    margin-bottom: 1vh;
+    padding: 0 2vw 0 5vh;
     transition: .3s opacity, .6s max-height;
     hyphens: auto;
     z-index: 2;
@@ -110,15 +117,25 @@
     position: absolute;
     transform: translate(-6px, 0);
     margin-top: 28px;
-    right: 15px;
+    right: 2vw;
   }
-  #faq ul li i:before, ul li i:after {
+  #faq ul li i:before{
     content: "";
     position: absolute;
     background-color: #e150ae;
     width: 4px;
     height: 10px;
   }
+  #faq ul li i:after {
+    content: "";
+    position: absolute;
+    background-color: #e150ae;
+    width: 4px;
+    height: 10px;
+  }
+
+
+
   #faq ul li i:before {
     transform: translate(-2px, 0) rotate(45deg);
   }
@@ -154,7 +171,7 @@
   
   
   
-  
+  /* -------------------------- start game button---------------------------------------- */
   a,
   a:visited,
   a:focus,
@@ -187,7 +204,7 @@
   .glow-on-hover {
     top:1vh;
     width: 15vw;
-    height: 7vh;
+    height: 9vh;
     border: none;
     outline: none;
     color: #fff;
@@ -203,7 +220,7 @@
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(45deg, #ff7979, #ffb67b, #fffd9b, #b1ff92, #9dffef, #a1b0ff, #dab8ff, #ffa3eb, #ff6b6b);
     position: absolute;
     top: -2px;
     left:-2px;
@@ -255,13 +272,14 @@
 
 .soundSlider {
   -webkit-appearance: none;
-  width: 40%;
-  height: 25px;
-  background: #d3d3d3;
+  width: 35vw;
+  height: 4vh;
+  background: #ffffff;
   outline: none;
-  opacity: 0.7;
+  opacity: 0.5;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  border-radius: 30px;
 }
 
 .soundSlider:hover {
@@ -271,18 +289,20 @@
 .soundSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4caf50;
+  width: 2vw;
+  height: 4vh;
+  background: #ff00ae;
   cursor: pointer;
+  border-radius: 1000px;
+  z-index: 9999999;
 }
 
-.soundSlider::-moz-range-thumb {
-  width: 25px;
+/* .soundSlider::-moz-range-thumb {
+  width: 25vw;
   height: 25px;
-  background: #4caf50;
+  background: #1aacca;
   cursor: pointer;
-}
+} */
 
 
 
