@@ -20,7 +20,7 @@ const background = new Image()
 background.style.color = 'transparent'
 
 let mySound = new Audio('/media/music2.mp3')
-mySound.volume=0
+mySound.volume=0.1
 
 const countdown = document.createElement('div');
 
