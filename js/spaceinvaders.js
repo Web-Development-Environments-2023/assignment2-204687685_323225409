@@ -2,12 +2,34 @@ import EnemyController from "./EnemyController.js"
 import Player from "./Player.js"
 import BulletController from "./BulletController.js"
 
+
+
+
+
+var intervalTimer
+intervalTimer = setInterval(game, 1000/60)
+
+
+
+hideAll()
+function hideAll(){
+    // $("#settingsDiv").hide()
+    // $("#gameDiv").show()
+    // $("#footer").hide()
+    // $("#logo").hide()
+
+}
+
+
+
+
 const canvas = document.getElementById('gameCanvas')
 const ctx = canvas.getContext("2d")
-//const lblScore = document.getElementById('lblScore')
-// const lblLife = document.getElementById('lblLife')
+
+
 const mute = document.querySelector('.speaker')//mute button
 const keyboard= document.querySelector(".kbrd")//key shoot
+
 
 canvas.width = innerWidth 
 canvas.height = innerHeight
@@ -15,25 +37,23 @@ canvas.height = innerHeight
 
 
 const background = new Image() 
-// background.src = "media/space.png"
-
 background.style.color = 'transparent'
+
 
 let mySound = new Audio('/media/music2.mp3')
 mySound.volume=0.1
 
-const countdown = document.createElement('div');
 
 var keyShoot="Space"
 
-document.querySelector(".kbrd").addEventListener('change', (e) => {
+document.querySelector(".kbrd").addEventListener('input', (e) => {
     
     keyShoot=e.currentTarget.value
+    player.setVal(keyShoot)
     
-   
  });
 
-
+ 
 
 
 //control the bullets of player - color and amount. truc\false=sound
@@ -62,35 +82,23 @@ var timeLimit =30
 var start_time
 var time_elapsed
 
-var intervalTimer
 start_time = new Date()
-
-
-
-
 
 
 // controling the sound in the game
 mute.addEventListener('click', function() {
   if(mySound.muted==true){
     mySound.muted=false
-    enemyBulletController.shootSound.muted=false//doesnt work
+    playerBulletController.shootSound.muted=false
     enemyController.enemyDeathSound.muted=false
-
-
   }
   else{
     mySound.muted=true
-    enemyBulletController.shootSound.muted=true//doesnt work
+    playerBulletController.shootSound.muted=true
     enemyController.enemyDeathSound.muted=true 
- 
   }
-    
-
+  
   })
-
-
-
 
 
 
@@ -128,7 +136,8 @@ function drawAllGame(){ // till game is on we continue draw it all
             
         }
 }
-let every5limit=0
+
+
 
 //coundown the game time
 function checkTimeLimit(){
@@ -140,26 +149,24 @@ function checkTimeLimit(){
 	}
    
 }
+
+
+let every5limit=0
 // make the enemies move faster every 5 seconds
 function fasterIn5Seconds() {
     // Code to be executed every 5 seconds
-   
-
     if (every5limit>=4){
         clearTimeout(timeout5sec)
         return
     }
     enemyController.moveFaster()
     every5limit+=1
-    setTimeout(fasterIn5Seconds, 5000);
+    setTimeout(fasterIn5Seconds, 5000)
+    
   }
   
   let timeout5sec=setTimeout(fasterIn5Seconds, 5000);
   
-
-
-
-
 
 
 function checkGameOver() { //this function checks if bullets hit the player - if so ->game is over
@@ -256,9 +263,6 @@ function displayGameOver() {
 }
 
 
-
-//control the intervals per second of the game
- setInterval(game, 1000/60)
 
 
 

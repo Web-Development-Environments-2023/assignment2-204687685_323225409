@@ -8,12 +8,14 @@ export default class Player {
     downPressed = false
 
     shootPressed = false
+    letterPressed = ""
+    keyWord = "Key"
     
    
 
     
 
-    constructor(canvas, velocity, bulletController,keyShoot){
+    constructor(canvas, velocity, bulletController,keyShoot = "Space"){
         this.canvas = canvas
         this.velocity = 7 //need to increase the speed
         this.bulletController = bulletController;
@@ -29,13 +31,10 @@ export default class Player {
         this.image = new Image();
         this.image.src = "media/player1.png"
         this.keyShoot=keyShoot
-        console.log(this.keyShoot)
         
 
         document.addEventListener("keydown", this.keydown)
         document.addEventListener("keyup", this.keyup)
-       
-        
 
     }
    
@@ -50,6 +49,14 @@ export default class Player {
         this.collideWithWalls()
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
 
+    }
+
+
+    setVal(key){ //choose the player key to shoot
+      if(key!="Space"){
+        this.letterPressed=key.toUpperCase()
+        this.keyShoot=this.keyWord.concat(this.letterPressed)
+      }
     }
 
 
@@ -108,7 +115,6 @@ export default class Player {
           if (event.code == "ArrowDown") {
             this.downPressed = true
           }
-          console.log(this.keyShoot)
 
         if (event.code == this.keyShoot) {
           this.shootPressed = true

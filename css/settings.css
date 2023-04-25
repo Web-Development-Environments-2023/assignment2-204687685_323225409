@@ -251,6 +251,41 @@
     100% { background-position: 0 0; }
 }
 
+
+
+.soundSlider {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.soundSlider:hover {
+  opacity: 1;
+}
+
+.soundSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.soundSlider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+
+
 /*
 #settingsDiv {
     justify-content: space-between;

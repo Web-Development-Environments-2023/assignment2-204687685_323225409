@@ -61,7 +61,7 @@
 
 <body>
 <!--------------------------------menu and logo-------------------------------------------------->
-    <header >
+    <header id="header">
         <div class="logo">
             <img src="media\logo.png">
         </div>
@@ -228,7 +228,7 @@
         </div>
 
         <!-- ------------------------------------------------------ -->
-        <div id="settingsDiv" style="display: none;">
+        <div id="settingsDiv" style="display: block;">
 
             <div id="faq">
                 <h4 id="titleAccordion">Settings</h4>
@@ -240,7 +240,7 @@
                     <h5>Keyboard</h5>
                     <p>
                         <label>Shoots key:</label>
-                        <input type="text" id="shoot" class="kbrd" maxlength="1"  value="Space"/>
+                        <input type="text" id="shoot" class="kbrd" maxlength="1" pattern="[A-Za-z\s]" value="Space"/>
                     </p>
                   </li>
                   <li>
@@ -270,106 +270,7 @@
                 <br>
                 <button class="glow-on-hover" type="button" onclick="showGameFromSettings()" style="font-family: Open Sans; font-weight: bold; font-size: 25px;">START GAME</button>
               </div>
-
-              
-
-            <!-- <h3 id="titleAccordion">Settings</h3>
-
-            <div class="accordion">
-                <div class="contentBx">
-
-                    <div class="labell">Keyboard</div>
-                        <div class="user-box">
-                            <label>Shoots key:</label>
-                            <input type="text" id="up" class="kbrd" maxlength="1" onkeydown="setUserUp(event)" value="ArrowUp"/>
-                        </div>
-
-                </div>
-
-            </div> -->
-
-            <!-- <section >
-                <div class="faq"> 
-                    <div class="question">
-                        <h4 id="titleAccordion">Keyboard</h4>
-                        <svg width="15" height="10" viewBox="0 0 42 25">
-                            <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <div class="answer">
-                        <div class="user-input-box">
-                            <label>Shoots key:</label>
-                            <input type="text" id="up" class="kbrd" maxlength="1" onkeydown="setUserUp(event)" value="ArrowUp"/>
-                        </div>
-                       
-                    </div> 
-                </div>
-
-
-                <div class="faq"> 
-                    <div class="question">
-                        <h4 id="titleAccordion">Time</h4>
-                        <svg width="15" height="10" viewBox="0 0 42 25">
-                            <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-
-                    <div class="answer">
-                        <div class="user-input-box">
-                            <label>Minutes:</label>
-                            <input type="number" id="minutes" min="1" max="9" value="1" />
-                        </div>
-
-                        <div class="user-input-box">
-                            <label>Seconds:</label>
-                            <input type="number" id="seconds" min="0" max="55" step="5" value="0"/>
-                        </div>
-                    </div> 
-                </div>
-
-
-                <div class="faq"> 
-                    <div class="question">
-                        <h4 id="titleAccordion">Sound</h4>
-                        <svg width="15" height="10" viewBox="0 0 42 25">
-                            <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-
-                    <div class="answer">
-                        <div class="user-input-box">
-                            <p>Volume:</p>
-                            <input
-                            type="range" min="0" max="100" value="50" class="soundSlider" id="soundValue" oninput="changeVolume()"/>
-                        </div>
-
-                        <div class="user-input-box">
-                            <p><span id="volumeValue"></span></p>
-                            <input type="checkbox" id="soundOff" name="soundOff" value="Sound off" />
-                            <label id="lblOff" for="soundOff">Sound Off</label><br />
-                        </div>
-
-                    </div>
-
-                     
-                </div>
-
-
-            </section> -->
-
-         
-
-
-             
-           
-
-
           
-
-            
-
-            
-         
         </div>
 
 
@@ -380,17 +281,17 @@
 
         <!------------------------------div on game canvas----------------------------------------->
 
-        <div id="gameDiv" style="display: block;">
+        <div id="gameDiv" style="display: none;">
             <div id="gameInfoContainer">
                 <ul id="infolist">
-                    <li>
-                        <!-- <label for="lblUser">USER NAME:</label>
+                    <!-- <li>
+                        <label for="lblUser">LEVEL:</label>
                         <br><br>
-                        <input id="lblUser" type="text" class="gameLbl" /> -->
+                        <input id="lblUser" type="text" class="gameLbl" />
 
-                    </li>
+                    </li> -->
                     <br>
-                    <br>
+                    
                     <li>
                         <label for="lblScore">SCORE:</label>
                         <br><br>
@@ -398,27 +299,25 @@
                         
                     </li>
                     <br>
-                    <br>
+                
                     <li>
                         <label for="lblTime">SECONDS:</label>
                         <br><br>
                         <input id="lblTime" type="text" class="gameLbl" /> 
                     </li>
                     <br>
-                    <br>
+                    
                     <li>
                         <label for="lblLife">LIVES:</label>
                         <br><br>
                     <input id="lblLife" type="text" class="gameLbl" />
                     </li>
                     <br>
-
-                    <br>
                     <br>
                     
                     <!-- new game and music buttons  -->
                     <li>
-                        <button class="btn btn1" onclick="refreshPage()"  > NEW GAME</button>
+                        <button class="glow-on" onclick="refreshPage()"  > NEW GAME</button>
                         <script>
                             function refreshPage(){
                                 window.location.reload();
@@ -426,25 +325,14 @@
                         </script>
                     </li>
                     <br>
-                   
-                    <br>
-                  
                     <br>
                     <br>
-
-
                     <li>
                         <h3> SOUND</h3>
                         <a href="#" class="speaker">
                             <span></span>
                         </a>
-                        <script>
-                            function refreshPage(){
-                                window.location.reload();
-                            } 
-                        </script>
 
-                
                     </li>
 
                 </ul>

@@ -18,8 +18,8 @@ function showGameFromSettings(){
     $("#settingsDiv").hide()
     $("#gameDiv").show()
 }
-document.querySelector(".kbrd").addEventListener('change', (e) => {
+// document.querySelector(".kbrd").addEventListener('change', (e) => {
     
-    console.log(e.currentTarget.value)
+//     console.log(e.currentTarget.value)
    
- });
+//  });

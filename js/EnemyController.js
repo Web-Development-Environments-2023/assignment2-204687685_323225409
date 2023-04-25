@@ -28,6 +28,8 @@ export default class EnemyController{
     score = this.scoreDefault
     bulletspeed=-4//control the bullet speed
 
+    level=1
+
 
 
 
@@ -68,7 +70,6 @@ export default class EnemyController{
             if (this.playerBulletController.collideWith(enemy)) {
               this.enemyDeathSound.currentTime = 0
               this.enemyDeathSound.play()
-              console.log(enemyRow)
               enemyRow.splice(enemyIndex, 1)
               if(enemy.type == 1){ this.score+=5} //set the type of enemy so we know how much points add to score
               else if(enemy.type == 2){this.score+=10}
@@ -154,8 +155,8 @@ export default class EnemyController{
     
     moveFaster(){//make bullets and enemies move faster
         
-        this.defaultXVelocity+=2
-        this.bulletspeed-=3
+        this.defaultXVelocity+=0.9
+        this.bulletspeed-=2             
 
     }
 
