@@ -86,7 +86,7 @@
                     <a href="#" onclick="switchToDiv('welcomePage')" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">About Us</a>
+                    <a href="#popup" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" onclick="switchToDiv('signUpForm')" class="nav-link">Sign Up</a>
@@ -101,7 +101,7 @@
 <!---------------------------------------content------------------------------------------->
     <div id="content">
         <!--div welcome page with the sign in & sign up buttons-->
-        <div id="welcomePage" style="display: none;">
+        <div id="welcomePage" style="display: block;">
             <div class="rocket">
                 <div class="rocket-body">
                     <div class="body"></div>
@@ -228,7 +228,7 @@
         </div>
 
         <!-- ------------------------------------------------------ -->
-        <div id="settingsDiv" style="display: block;">
+        <div id="settingsDiv" style="display: none;">
 
             <div id="faq">
                 <h4 id="titleAccordion">Settings</h4>
@@ -345,26 +345,33 @@
                 
    
         </div>
-
         <!---------------------------------- The about Modal -------------------------------------------------------------------->
         <!-- <button onclick="window.dialog.showModal();">Show Notification</button> -->
 
-        <dialog id="dialog" >
-            <div class="containerA">
-                <a class="button" href="#popup">Open Modal</a>
+        <dialog id="dialog" open >
+                <!-- <a class="button" href="#popup">Open Modal</a> -->
                 <div class="popup" id="popup">
                   <div class="popup-inner">
                     <div class="popup__photo">
-                      <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&s=9980646201037d28700d826b1bd096c4&auto=format&fit=crop&w=700&q=80" alt="">
+                      <img src="media\player1.png" alt="">
                     </div>
                     <div class="popup__text">
                       <h1>Lorem ipsum dolor sit amet</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex velit, viverra non vulputate vitae, blandit vitae nisl. Nullam fermentum orci et erat viverra bibendum. Aliquam sed varius nibh, vitae mattis purus. Mauris elementum sapien non ullamcorper vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eget felis sit amet eros viverra pulvinar.</p>
+                      <p>We are Natalia Kataev and Ayelet Moyal.
+                        We built a Space Invaders game using HTML, Jquery, Java Script and CSS.
+                        The difficulties we encountered are:
+                        1. Switching between divs - We had a hard time implementing the functionality of switching between each of the different screens in the game.
+                        2. Realizing the functionality of the game - it was difficult to arrange the entire game according to the instructions given to us, for example, accelerating the enemies and their bullets every 5 seconds.
+                        Game Instructions:
+                        You have to shoot at the enemy spaceships and try to kill them all before the time runs out, you can use the arrow keys on the keyboard to move and you can choose the button used to shoot.
+                        On the game screen there is a timer that shows the remaining time until the end of the game, the minimum is two minutes, but you can set a longer time on the settings screen.
+                        Enjoy the game! 
+                    </p>
                     </div>
                     <a class="popup__close" href="#">X</a>
                   </div>
                 </div>
-              </div>
+              
             
 
             <!-- <div class="aboutContainer">
