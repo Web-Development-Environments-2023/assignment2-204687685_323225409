@@ -18,3 +18,8 @@ function showGameFromSettings(){
     $("#settingsDiv").hide()
     $("#gameDiv").show()
 }
+document.querySelector(".kbrd").addEventListener('change', (e) => {
+    
+    console.log(e.currentTarget.value)
+   
+ });

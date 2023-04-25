@@ -6,7 +6,8 @@ const canvas = document.getElementById('gameCanvas')
 const ctx = canvas.getContext("2d")
 //const lblScore = document.getElementById('lblScore')
 // const lblLife = document.getElementById('lblLife')
-
+const mute = document.querySelector('.speaker')//mute button
+const keyboard= document.querySelector(".kbrd")//key shoot
 
 canvas.width = innerWidth 
 canvas.height = innerHeight
@@ -19,8 +20,19 @@ const background = new Image()
 background.style.color = 'transparent'
 
 let mySound = new Audio('/media/music2.mp3')
-mySound.volume=0.3
+mySound.volume=0
+
 const countdown = document.createElement('div');
+
+var keyShoot="Space"
+
+document.querySelector(".kbrd").addEventListener('change', (e) => {
+    
+    keyShoot=e.currentTarget.value
+    
+   
+ });
+
 
 
 
@@ -32,7 +44,7 @@ const enemyBulletController = new BulletController(canvas, 1, "red", false)
 
 //instance of enemy
 const enemyController = new EnemyController(canvas, enemyBulletController, playerBulletController)
-const player = new Player(canvas, 3, playerBulletController)
+const player = new Player(canvas, 3, playerBulletController,keyShoot)
 let newPlayerPositionX = player.x
 
 
@@ -44,13 +56,42 @@ let option2=false//ani
 let option3=false//ani
 
 
+
 //timer vars
-var timeLimit =8
+var timeLimit =30
 var start_time
 var time_elapsed
 
 var intervalTimer
 start_time = new Date()
+
+
+
+
+
+
+// controling the sound in the game
+mute.addEventListener('click', function() {
+  if(mySound.muted==true){
+    mySound.muted=false
+    enemyBulletController.shootSound.muted=false//doesnt work
+    enemyController.enemyDeathSound.muted=false
+
+
+  }
+  else{
+    mySound.muted=true
+    enemyBulletController.shootSound.muted=true//doesnt work
+    enemyController.enemyDeathSound.muted=true 
+ 
+  }
+    
+
+  })
+
+
+
+
 
 
 //draw the  whole game
@@ -84,19 +125,37 @@ function drawAllGame(){ // till game is on we continue draw it all
         if (lblTime.value <= 0){
             lblTime.value = 0.000
             timeLimit=0
+            
         }
 }
-
+let every5limit=0
 
 //coundown the game time
 function checkTimeLimit(){
 	var currentTime = new Date();
 	time_elapsed = (currentTime - start_time) / 1000;
+  
 	if (time_elapsed >= timeLimit){
         isGameOver = true
 	}
+   
 }
+// make the enemies move faster every 5 seconds
+function fasterIn5Seconds() {
+    // Code to be executed every 5 seconds
+   
 
+    if (every5limit>=4){
+        clearTimeout(timeout5sec)
+        return
+    }
+    enemyController.moveFaster()
+    every5limit+=1
+    setTimeout(fasterIn5Seconds, 5000);
+  }
+  
+  let timeout5sec=setTimeout(fasterIn5Seconds, 5000);
+  
 
 
 
@@ -105,17 +164,20 @@ function checkTimeLimit(){
 
 function checkGameOver() { //this function checks if bullets hit the player - if so ->game is over
     if (isGameOver) {
+        lblTime.value=0
 
         return
     }
   
     if (enemyBulletController.collideWith(player)) { //update lives and game over
         player.lives--
+
     
         if(player.lives <=0){//hosafti ifim
-            isLivesOver = true
             isGameOver = true
             option1=true//ani
+            
+            
         }
         player.x = newPlayerPositionX
     }
@@ -125,6 +187,7 @@ function checkGameOver() { //this function checks if bullets hit the player - if
         if (enemyController.score>=100){
             isGameOver=true
             option2=true
+            
             
             
         }
@@ -145,13 +208,13 @@ function checkGameOver() { //this function checks if bullets hit the player - if
 
 function stopAudio() {
     mySound.pause(); // Pause the audio
-    mySound.currentTime = 0; // Reset the audio to the beginning
+    // mySound.currentTime = 0; // Reset the audio to the beginning
   }
 
 
 function displayGameOver() {
     if (isGameOver) {
-        mySound.stopAudio
+        mySound.pause();
         if (option1){
             timeLimit=0
 
@@ -195,7 +258,7 @@ function displayGameOver() {
 
 
 //control the intervals per second of the game
-intervalTimer = setInterval(game, 1000/60)
+ setInterval(game, 1000/60)
 
 
 
