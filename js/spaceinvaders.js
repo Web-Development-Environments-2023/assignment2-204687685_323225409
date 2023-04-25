@@ -101,14 +101,15 @@ mute.addEventListener('click', function() {
   })
 
   var inputFieldTime = document.querySelector(".timeSettings");//take the time from the input and set the time limit 
+  
   inputFieldTime.addEventListener("input", function() {
-      if(inputField.value>2 && inputFieldTime.value<=9){
+      if(inputFieldTime.value>2 && inputFieldTime.value<=9){
           timeLimit = inputFieldTime.value*60;
               
       }      
   });
 
-  
+
 
 //draw the  whole game
 function game() {
