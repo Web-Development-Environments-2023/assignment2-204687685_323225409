@@ -122,10 +122,10 @@
                 </ul>
             </div>
             <div class="buttons">
-                <button id="signUpButton" class="btn btn1" onclick="">
+                <button id="signUpButton" onclick="switchToDiv('signUpForm')" class="btn btn1" onclick="">
                     Sign Up
                   </button>
-                  <button id="LoginButton" class="btn btn2" onclick="">
+                  <button id="LoginButton" onclick="switchToDiv('loginForm')" class="btn btn2" onclick="">
                     Login
                   </button>
             </div>
@@ -314,7 +314,7 @@
                     <input id="lblLife" type="text" class="gameLbl" />
                     </li>
                     <br>
-                    <br>
+                    
                     
                     <!-- new game and music buttons  -->
                     <li>
@@ -327,7 +327,7 @@
                     </li>
                     <br>
                     <br>
-                    <br>
+                   
                     <li>
                         <h3> SOUND</h3>
                         <a href="#" class="speaker">
@@ -355,6 +355,7 @@
                   <div class="popup-inner">
                     <div class="popup__photo">
                       <img src="media\player1.png" alt="">
+                      <!-- <img src="media\enemy4.png" alt=""> -->
                     </div>
                     <div class="popup__text">
                       <h1>ABOUT US</h1>
@@ -364,58 +365,20 @@
                         <br>
                         1. Switching between divs - We had a hard time implementing the functionality of switching between each of the different screens in the game.
                         <br>
-                        2. Realizing the functionality of the game - it was difficult to arrange the entire game according to the instructions given to us, for example, accelerating the enemies and their bullets every 5 seconds.
+                        2. Implementing the functionality of the game - it was difficult to arrange the entire game according to the instructions given to us, for example, accelerating the enemies and their bullets every 5 seconds.
                         <br>
                         Game Instructions:
                         <br>
                         You have to shoot at the enemy spaceships and try to kill them all before the time runs out, you can use the arrow keys on the keyboard to move and you can choose the button used to shoot.
                         On the game screen there is a timer that shows the remaining time until the end of the game, the minimum is two minutes, but you can set a longer time on the settings screen.
                         <br>
-                        Enjoy the game! 
+                        <h1>Enjoy the game!</h1>
+                         
                     </p>
                     </div>
                     <a class="popup__close" href="#">X</a>
                   </div>
                 </div>
-              
-                <script>
-                    const dialog = document.getElementById('dialog');
-                  
-                    // Close dialog when Esc key is pressed
-                    document.addEventListener('keydown', event => {
-                      if (event.key === 'Escape' || event.keyCode === 27) {
-                        dialog.close();
-                      }
-                    });
-                  
-                    // Close dialog when clicked outside
-                    dialog.addEventListener('click', event => {
-                      if (event.target !== dialog) {
-                        dialog.close();
-                      }
-                    });
-                    function openDialog() {
-                        dialog.showModal();
-                        }
-                  </script>
-
-            <!-- <div class="aboutContainer">
-                <a class="close" href="#" style="color: rgb(255, 3, 179);">&times;</a>
-
-
-                <h2 class="form-title"> Sign Up</h2>
-
-                <div id="aboutText">
-                    this is us  
-                </div>
-
-                <div class="form-submit-btn">
-                    <input id="closeAbout" type="button" value="OK! Thank You!" onclick="">
-                </div>
-                <button class="btn btn-open">O K ! </button>
-
-            </div>
-    -->
             
         </dialog>
 

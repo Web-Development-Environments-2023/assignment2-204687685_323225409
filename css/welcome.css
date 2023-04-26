@@ -118,14 +118,14 @@ header{
 
 .logo{
     position: fixed;
-    left: 3vw;
+    left: 25vw;
     /* left: 35%; */
     transform: translateX(-50%);
     /* z-index: 9999; */
-    zoom: 20%; 
+    zoom: 15%; 
     top: 6vh;
     opacity: 0.6;
-    animation: bounce 0.4s infinite;
+    /* animation: bounce 0.4s infinite; */
     
     
 }
@@ -152,35 +152,35 @@ header{
 .rocket{
     position: absolute;
     top: 35%;
-    width: 80px;
+    width: 6vw;
     left: calc(50% - 50px);
 }
 
 .rocket .rocket-body{
-    width: 80px;
+    width: 7vw;
     left: calc(50% - 50px);
     animation: bounce 0.4s infinite;
 }
 
 .rocket .rocket-body .body{
-    background-color: rgb(255, 240, 249);
-    height: 180px;
+    background-color: rgb(182, 182, 182);
+    height: 33vh;
     left: calc(50% - 50px);
     border-top-right-radius: 100%;
     border-top-left-radius: 100%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    border-top: 5px solid #ff5fbf;
+    border-top: 5px solid #8e0000;
 }
 
 .rocket .rocket-body:before{
     content: '';
     position: absolute;
     left: calc(50% - 24px);
-    width: 48px;
-    height: 13px;
-    background: linear-gradient(to right top, #ff68c3, #eb79bd); 
-    bottom: -13px;
+    width: 4vw;
+    height: 2.2vh;
+    background: linear-gradient(to right top, #9b0000, #8e0000); 
+    bottom: -2.2vh;
     border-bottom-right-radius: 60%;
     border-bottom-left-radius: 60%;
 
@@ -188,21 +188,21 @@ header{
 
 .rocket .window{
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 3.6vw;
+    height: 8vh;
     border-radius: 100%;
     background-color: rgb(41, 41, 41);
     left: calc(50% - 24px);
-    top: 40px;
-    border: 5px solid #fd38ae;
+    top: 8vh;
+    border: 5px solid #8e0000;
 }
 
 
 .rocket .window::after{
     position: absolute;
     content: '';
-    width: 10px;
-    height: 10px;
+    width: 1vw;
+    height: 2vh;
     border-radius: 50%;
     top: 20%;
     left: 20%;
@@ -214,7 +214,7 @@ header{
     position: absolute;
     height: 55px;
     width: 50px;
-    background: linear-gradient(to right top, #ff64c1, #eb79bd);
+    background: linear-gradient(to right top, #900000, #9e0000);
     z-index: -100;
 }
 
@@ -238,9 +238,9 @@ header{
     position: absolute;
     top: 90%;
     width: 28px;
-    background: linear-gradient(to bottom ,transparent 10% , #f5f5f5 100%); 
+    background: linear-gradient(to bottom ,transparent 10% , #e28420 100%); 
     height: 150px;
-    left: calc(50% - 14px);
+    left: calc(50% - 7px);
     animation: exhaust 0.2s infinite;
 }
 
@@ -248,7 +248,7 @@ header{
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: #f5f5f5;
+    background-color: #9a9a9a;
     list-style: none;
     border-radius: 100%;
 }
@@ -342,7 +342,7 @@ header{
 
     }
     100%{
-        background-color: #f5f5f5;
+        background-color: #a3a3a3;
         transform: scale(1);
     }
 }
