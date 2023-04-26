@@ -43,6 +43,9 @@ background.style.color = 'transparent'
 let mySound = new Audio('/media/music2.mp3')
 mySound.volume=0.1
 
+let playerDead=new Audio("/media/deadSound.mp3")
+playerDead.volume=0.9
+
 
 var keyShoot="Space"
 
@@ -89,11 +92,13 @@ start_time = new Date()
 mute.addEventListener('click', function() {
   if(mySound.muted==true){
     mySound.muted=false
+    playerDead.muted=false
     playerBulletController.shootSound.muted=false
     enemyController.enemyDeathSound.muted=false
   }
   else{
     mySound.muted=true
+    playerDead.muted=true
     playerBulletController.shootSound.muted=true
     enemyController.enemyDeathSound.muted=true 
   }
@@ -143,7 +148,7 @@ function drawAllGame(){ // till game is on we continue draw it all
         player.draw(ctx)
         playerBulletController.draw(ctx)
         enemyBulletController.draw(ctx)
-        mySound.play()
+        //mySound.play()
 
         lblScore.value = enemyController.score
         lblLife.value = player.lives
@@ -197,6 +202,7 @@ function checkGameOver() { //this function checks if bullets hit the player - if
   
     if (enemyBulletController.collideWith(player)) { //update lives and game over
         player.lives--
+        playerDead.play()//player dead sound
 
     
         if(player.lives <=0){//hosafti ifim

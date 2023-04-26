@@ -86,7 +86,7 @@
                     <a href="#" onclick="switchToDiv('welcomePage')" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#popup" class="nav-link">About Us</a>
+                    <a href="#popup"  onclick="openDialog()" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" onclick="switchToDiv('signUpForm')" class="nav-link">Sign Up</a>
@@ -349,7 +349,7 @@
         <!---------------------------------- The about Modal -------------------------------------------------------------------->
         <!-- <button onclick="window.dialog.showModal();">Show Notification</button> -->
 
-        <dialog id="dialog" open >
+        <dialog id="dialog"  >
                 <!-- <a class="button" href="#popup">Open Modal</a> -->
                 <div class="popup" id="popup">
                   <div class="popup-inner">
@@ -378,7 +378,26 @@
                   </div>
                 </div>
               
-            
+                <script>
+                    const dialog = document.getElementById('dialog');
+                  
+                    // Close dialog when Esc key is pressed
+                    document.addEventListener('keydown', event => {
+                      if (event.key === 'Escape' || event.keyCode === 27) {
+                        dialog.close();
+                      }
+                    });
+                  
+                    // Close dialog when clicked outside
+                    dialog.addEventListener('click', event => {
+                      if (event.target !== dialog) {
+                        dialog.close();
+                      }
+                    });
+                    function openDialog() {
+                        dialog.showModal();
+                        }
+                  </script>
 
             <!-- <div class="aboutContainer">
                 <a class="close" href="#" style="color: rgb(255, 3, 179);">&times;</a>
