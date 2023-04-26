@@ -52,6 +52,7 @@
     <link rel="stylesheet" href="css/score.css" />
     <link rel="stylesheet" href="css/settings.css" />
     <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/table.css" />
 <!---------------------------------------------------------------------------------->
 
 
@@ -101,7 +102,7 @@
 <!---------------------------------------content------------------------------------------->
     <div id="content">
         <!--div welcome page with the sign in & sign up buttons-->
-        <div id="welcomePage" style="display: block;">
+        <div id="welcomePage" style="display: none;">
             <div class="rocket">
                 <div class="rocket-body">
                     <div class="body"></div>
@@ -282,15 +283,15 @@
 
         <!------------------------------div on game canvas----------------------------------------->
 
-        <div id="gameDiv" style="display: none;">
+        <div id="gameDiv" style="display: block;">
             <div id="gameInfoContainer">
                 <ul id="infolist">
-                    <!-- <li>
+                    <li>
                         <label for="lblUser">LEVEL:</label>
                         <br><br>
                         <input id="lblUser" type="text" class="gameLbl" />
 
-                    </li> -->
+                    </li>
                     <br>
                     
                     <li>
@@ -383,9 +384,88 @@
         </dialog>
 
 
+<!-- ------------------------------------------high score table--------------------------------------------------------------------------------------- -->
+        <div id="EndGame" style="display: none;"  >
+            <form id="EndGameForm">
+            <div class="patterns" id="EndGameInDiv">
+                <svg width="100%" height="10%">
+                <text id="WinloseTxt" x="50%" y="80%" text-anchor="middle">
+                    
+                </text>
+                </svg>
+                </text>
+                
+                <h4 id="titleAccordion">Scores Table</h4>
+                <div class="table-wrapper">
+                    <table class="fl-table">
+
+                        <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>UserName</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                            <!-- <th>Header 5</th> -->
+                        </tr>
+
+
+                        </thead>
+                        <tbody>
+                    
+                        <tbody>
+                    </table>
+                </div>
+                
+                <table id="logs_btns">
+                <tr>
+                    <td>
+                    <input class="patterns-button" type="button" id="Restart_btn" value="Restart"></input>
+                    </td>
+                    <td>
+                    <input class="patterns-button" type="button" id="Exit_btn" value="Exit"></input>
+                    </td>
+                </tr>
+                </table>
+            </div>
+            </form>
+        </div>
 
 
 
+
+
+
+
+
+
+        <div id="scoreTable" style="display: none;">
+            
+            <!-- <h2>Responsive Table</h2> -->
+            <h4 id="titleAccordion">Scores Table</h4>
+            <div class="table-wrapper">
+                <table class="fl-table">
+
+                    <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>UserName</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                        <!-- <th>Header 5</th> -->
+                    </tr>
+
+
+                    </thead>
+                    <tbody>
+                   
+                    <tbody>
+                </table>
+            </div>
+            
+        </div>
+
+
+<!-- ======================================================================= -->
 
     </div> <!--div content closer-->
     <!--------------------------------content closer----------------------------------------------------------------->
@@ -442,6 +522,7 @@
     <script type="text/javascript" src="./js/login.js"></script> 
     <script type="text/javascript" src="./js/settings.js"></script> 
     <script type="text/javascript" src="./js/about.js"></script> 
+    <script type="text/javascript" src="./js/table.js"></script> 
 
 <!---------------------------------------------------------------------------------->
 

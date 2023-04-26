@@ -1,7 +1,7 @@
 
 
 const loginSubmmition = document.getElementById("loginSubmmition");
-
+// var labelUser = document.getElementById("lblUser")
 //   ---------------------------------------------------------------funcions for login----------------------------------------------------------------------------------------
 
 function submitLogin(){ 
@@ -10,6 +10,7 @@ function submitLogin(){
     currLogged = userName;
     if (userName in registeredUsers){
         if(registeredUsers[userName] == password){
+            lblUser.value = userName
             moveToSettings()
                         // submitHandler:{
             //     $('#loginForm').fadeOut();

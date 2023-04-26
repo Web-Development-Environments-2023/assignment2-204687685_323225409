@@ -38,7 +38,6 @@ function switchToDiv(divToSwitch) { //this is the main function that control the
     dictOfAllDivs = ["welcomePage", "signUpForm", "settingsDiv", "loginForm", "gameDiv"] //ADD more dives!!
     
     if(document.getElementById("gameDiv").style.display == "block"){
-        console.log("im on game div")
         // endGame()
     }
     

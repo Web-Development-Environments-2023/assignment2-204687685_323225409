@@ -5,9 +5,7 @@ import BulletController from "./BulletController.js"
 
 
 
-
-var intervalTimer
-intervalTimer = setInterval(game, 1000/60)
+var intervalTimer= setInterval(game, 1000/60)
 
 
 
@@ -140,7 +138,6 @@ function game() {
     }
 }
 
-
 function drawAllGame(){ // till game is on we continue draw it all
     
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height) 
@@ -152,6 +149,7 @@ function drawAllGame(){ // till game is on we continue draw it all
 
         lblScore.value = enemyController.score
         lblLife.value = player.lives
+        
 
         lblTime.value = (timeLimit - time_elapsed).toPrecision(3) 
         if (lblTime.value <= 0){
@@ -241,55 +239,90 @@ function checkGameOver() { //this function checks if bullets hit the player - if
 
 
 
-
-
-function stopAudio() {
-    mySound.pause(); // Pause the audio
-    // mySound.currentTime = 0; // Reset the audio to the beginning
-  }
-
-
 function displayGameOver() {
     if (isGameOver) {
         mySound.pause();
         if (option1){
             timeLimit=0
 
-            let text = "You Lost" 
-            let textOffset = 5
+            // let text = "You Lost" 
+            // let textOffset = 5
         
-            ctx.fillStyle = "#ff68c3"
-            ctx.font = "70px Arial"
-            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+            // ctx.fillStyle = "#ff68c3"
+            // ctx.font = "70px Arial"
+            // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+            document.getElementById("WinloseTxt").innerHTML = "You Lost"
+            moveDivEnd()
 
         }
         if(option2){
-            let text = "Winner" 
-            let textOffset = 5
+            // let text = "Winner" 
+            // let textOffset = 5
         
-            ctx.fillStyle = "#ff68c3"
-            ctx.font = "70px Arial"
-            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
-            
+            // ctx.fillStyle = "#ff68c3"
+            // ctx.font = "70px Arial"
+            // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+            document.getElementById("WinloseTxt").innerHTML = "Winner!";
+            moveDivEnd()
         }
         if(option3){
-            let text = "You can do better" 
-            let textOffset = 5
+            // let text = "You can do better" 
+            // let textOffset = 5
         
-            ctx.fillStyle = "#ff68c3"
-            ctx.font = "70px Arial"
-            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+            // ctx.fillStyle = "#ff68c3"
+            // ctx.font = "70px Arial"
+            // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+
+            document.getElementById("WinloseTxt").innerHTML = "You can do better";
+            moveDivEnd()
         }
         if(didWin){
-            let text = "Champion" 
-            let textOffset = 5
+            // let text = "Champion" 
+            // let textOffset = 5
         
-            ctx.fillStyle = "#ff68c3"
-            ctx.font = "70px Arial"
-            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+            // ctx.fillStyle = "#ff68c3"
+            // ctx.font = "70px Arial"
+            // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+
+            document.getElementById("WinloseTxt").innerHTML = "Champion!";
+            moveDivEnd()
         }
+        insertTable()
+        window.clearInterval(intervalTimer)
       
     }
+}
+
+var i = 0
+
+function insertTable(){
+
+
+    var table = document.querySelector('.fl-table')
+
+    // var table = document.getElementById('.fl-table');
+
+    var date = new Date().toLocaleString()
+    console.log('date:' + date)
+    
+    var playerName = lblUser.value
+    console.log('name:' + playerName)
+
+    var scoress = enemyController.score
+    console.log('score from label:' + scoress)
+
+    
+    const newRow = table.insertRow();
+    const rankCell = newRow.insertCell();
+    const nameCell = newRow.insertCell();
+    const scoreCell = newRow.insertCell();
+    const dateCell = newRow.insertCell();
+
+    rankCell.innerText = i + 1;
+    nameCell.innerText = playerName
+    scoreCell.innerText =scoress;
+    dateCell.innerText = date;
+    
 }
 
 
@@ -297,14 +330,11 @@ function displayGameOver() {
 
 
 
+function moveDivEnd(){
+    //stop game function
+    $("#gameDiv").hide()
+    $("#EndGame").show()
 
-// function endGame() {
-//     console.log("WTF?????????????????????????????????????????")
-//     $("#gameDiv").hide();
-// 	$("#signUpPage").show();
-
-
-// }
-  
+}
 
 

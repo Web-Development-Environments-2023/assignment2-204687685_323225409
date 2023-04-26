@@ -1,16 +1,17 @@
 
 
+
 //   ---------------------------------------------------------------funcions for sign up ----------------------------------------------------------------------------------------
 
 //users dictionary after sign up. we will add it all sign ups
-var registeredUsers = {"a":"a"}; //befor hhagasha we need to chang it!!!!!!!!!!!!!!!!!
-$(document).ready(function() {
-    // $("#gamePage").hide();
-    // $("#settingsPage").hide();
-    // $("#loginPage").hide();
-	// $("#signUpPage").hide();
-    // openNav();
 
+
+var registeredUsers = {"a":"a", "n":"n"}; //befor hhagasha we need to chang it!!!!!!!!!!!!!!!!!
+// const loginSubmmition = document.getElementById("loginSubmmition");
+
+
+
+$(document).ready(function() {
     jQuery.validator.addMethod("lettersRule", function(value, element) {
         return this.optional(element) || /^(([A-Za-z]+[0-9]|[0-9]+[A-Za-z])[A-Za-z0-9]*)$/i.test(value);
     }, "Must contain only letters and numbers");
@@ -134,7 +135,6 @@ function registerUser() {
         alert("Successfully signed up!")
         
     }
- 
     return false;
 }
 
@@ -154,3 +154,5 @@ function resetRegisterForm() {
     $("#signForm")[0].reset()
     $("#signForm").data("validator").resetForm();
 }
+
+

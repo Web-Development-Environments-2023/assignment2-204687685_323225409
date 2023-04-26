@@ -144,8 +144,11 @@ header{
     margin-top: 1vh;
     color: aliceblue;
     text-shadow: 2px 4px 4px rgb(235, 177, 211);
+    /* animation: textAnimate 5s infinite alternate; */
   
 }
+
+
 
 /*-------------------------------------------animation of rocket-------------------------------------------------------*/
 
