@@ -111,6 +111,16 @@ mute.addEventListener('click', function() {
 
 
 
+  var inputFieldAudio = document.querySelector(".soundSlider");//take the volume from the input and set the volume 
+
+    inputFieldAudio.addEventListener("input", function() {
+    mySound.volume=inputFieldAudio.value/100
+    
+  
+    });
+
+
+
 //draw the  whole game
 function game() {
     
@@ -221,6 +231,11 @@ function checkGameOver() { //this function checks if bullets hit the player - if
 
   
 }
+
+
+
+
+
 
 function stopAudio() {
     mySound.pause(); // Pause the audio
