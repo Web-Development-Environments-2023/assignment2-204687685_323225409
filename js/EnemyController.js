@@ -50,6 +50,9 @@ export default class EnemyController{
 
     
 
+    setScore(){
+        this.score = 0
+    }
 
     draw(ctx){
         this.updateVelocityAndDirection()
@@ -160,6 +163,17 @@ export default class EnemyController{
 
     }
 
+
+
+    setDefaultX(){
+        this.defaultXVelocity = 3
+
+    }
+
+    setBullets(){
+        this.bulletspeed = -4
+        
+    }
 
 
 

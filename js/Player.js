@@ -60,6 +60,14 @@ export default class Player {
     }
 
 
+    setLives(){
+      this.lives = 3
+    }
+
+
+    
+
+
     move() {
         if (this.rightPressed) {
           this.x += this.velocity;
@@ -141,6 +149,6 @@ export default class Player {
 
 
 
-      
+
 
 }

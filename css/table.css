@@ -12,12 +12,12 @@
 
 
 .table-wrapper{
-    margin: 5vw 70vh 70vw;
+    margin: 5vw 7vh 7vw;
     box-shadow: 10px 35px 50px rgba(255, 255, 255, 0.206);
 }
 
 .fl-table {
-    border-radius: 30px;
+    /* border-radius: 30px; */
     font-size: 30px;
     font-weight: bold;
     border: none;
