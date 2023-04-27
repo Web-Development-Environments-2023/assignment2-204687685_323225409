@@ -57,16 +57,15 @@ document.querySelector(".kbrd").addEventListener('input', (e) => {
  
 
 
-//control the bullets of player - color and amount. truc\false=sound
 const playerBulletController = new BulletController(canvas, 20, "yellow", true)
-//control the bullets of invaders - color and amount. truc\false=sound
-const enemyBulletController = new BulletController(canvas, 1, "red", false)
+const enemyBulletController = new BulletController(canvas, 3, "red", false)
 
 
 //instance of enemy
 const enemyController = new EnemyController(canvas, enemyBulletController, playerBulletController)
 const player = new Player(canvas, 3, playerBulletController,keyShoot)
 let newPlayerPositionX = player.x
+
 
 
 let isGameOver = false
@@ -84,6 +83,17 @@ var start_time
 var time_elapsed
 
 start_time = new Date()
+
+
+
+
+
+
+
+
+
+
+
 
 
 // controling the sound in the game
@@ -129,6 +139,7 @@ function game() {
     
     checkTimeLimit()
     checkGameOver()
+    incraseSpeedInGame()
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     displayGameOver()
     
@@ -173,21 +184,40 @@ function checkTimeLimit(){
 }
 
 
-let every5limit=0
-// make the enemies move faster every 5 seconds
-function fasterIn5Seconds() {
-    // Code to be executed every 5 seconds
-    if (every5limit>=4){
-        clearTimeout(timeout5sec)
-        return
+
+var incrase
+var timeToIncrase 
+// let every5limit=0
+function incraseSpeedInGame(){
+    if(time_elapsed >= timeToIncrase && incrase<4){
+        incrase+=1
+        timeToIncrase+=5
+        enemyController.moveFaster()
     }
-    enemyController.moveFaster()
-    every5limit+=1
-    setTimeout(fasterIn5Seconds, 5000)
+}
+
+
+
+
+
+
+
+
+
+// make the enemies move faster every 5 seconds
+// function fasterIn5Seconds() {
+//     // Code to be executed every 5 seconds
+//     if (every5limit>=4){
+//         clearTimeout(timeout5sec)
+//         return
+//     }
+//     enemyController.moveFaster()
+//     every5limit+=1
+//     setTimeout(fasterIn5Seconds, 5000)
     
-  }
+//   }
   
-  let timeout5sec=setTimeout(fasterIn5Seconds, 5000);
+//   let timeout5sec=setTimeout(fasterIn5Seconds, 5000);
   
 
 
@@ -241,7 +271,9 @@ function checkGameOver() { //this function checks if bullets hit the player - if
 
 function displayGameOver() {
     if (isGameOver) {
-        mySound.pause();
+        mySound.pause()
+        clearHighscoresTable() 
+
         if (option1){
             timeLimit=0
 
@@ -299,8 +331,9 @@ function insertTable(){
 
 
     var table = document.querySelector('.fl-table')
-
+    let tbody = table.querySelector('tbody')  || highscoresTable.appendChild(document.createElement('tbody'))
     // var table = document.getElementById('.fl-table');
+    
 
     var date = new Date().toLocaleString()
     console.log('date:' + date)
@@ -311,22 +344,50 @@ function insertTable(){
     var scoress = enemyController.score
     console.log('score from label:' + scoress)
 
-    
-    const newRow = table.insertRow();
+    let newRow = tbody.insertRow(); 
+    // const newRow = table.insertRow();
     const rankCell = newRow.insertCell();
     const nameCell = newRow.insertCell();
     const scoreCell = newRow.insertCell();
     const dateCell = newRow.insertCell();
 
-    rankCell.innerText = i + 1;
+    // rankCell.innerText = i + 1;
     nameCell.innerText = playerName
     scoreCell.innerText =scoress;
     dateCell.innerText = date;
+    i += 1
+
     
+  
+    // Find the position to insert the new row based on the score
+    // let rows = table.rows;
+    let rows = tbody.rows;
+
+    let position = rows.length - 1; // Start from the second last row (last row is the new one)
+    while (position > 0 && parseInt(rows[position-1].cells[2].innerHTML) < scoress) {
+        position--;
+    }
+    rankCell.innerHTML = position+1
+
+    if (position < rows.length - 1) {
+        tbody.insertBefore(newRow, rows[position]); // Insert the new row at the correct position
+        for(let i=position; i<rows.length; i++){
+            rows[i].cells[0].innerHTML=i+1
+
+        }
+      }else{
+        rankCell.innerHTML=rows.length
+    }
 }
 
 
-
+function clearHighscoresTable() {
+    let highscoresTable = document.getElementById('.fl-table');
+    let tbody = highscoresTable.querySelector('tbody');
+    if (tbody) {
+      tbody.remove();
+    }
+  }
 
 
 
@@ -337,4 +398,51 @@ function moveDivEnd(){
 
 }
 
+function moveDivSett(){
+    //stop game function
+    
+    $("#EndGame").hide()
+    $("#settingsDiv").show()
 
+}
+
+
+
+document.getElementById("newGameButton").addEventListener("click",moveDivSett)
+document.getElementById("newGameSett").addEventListener("click",newGame)
+document.getElementById("NGM").addEventListener("click",newGame)
+function newGame(){
+    if (intervalTimer != undefined){
+		window.clearInterval(intervalTimer)
+	}
+    // window.clearInterval(intervalTimer)
+    // stopInterval()
+
+    $("#gameDiv").show()
+    $("#EndGame").hide()
+    $("#settingsDiv").hide()
+    canvas.focus()
+    resetGame()
+    intervalTimer= setInterval(game, 1000/60)
+    // startInterval(game())
+}
+
+
+function resetGame(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    isGameOver= false
+    didWin= false
+    option1=false
+    option2=false
+    option3=false
+    player.setLives()
+    enemyController.setScore()
+    enemyController.createEnemies()
+    enemyController.setBullets()
+    enemyController.setDefaultX()
+
+    timeLimit = inputFieldTime.value*60
+    start_time = new Date()
+    incrase=0
+    timeToIncrase=5
+}
