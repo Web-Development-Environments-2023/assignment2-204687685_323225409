@@ -283,7 +283,7 @@
 
         <!------------------------------div on game canvas----------------------------------------->
 
-        <div id="gameDiv" style="display: block;">
+        <div id="gameDiv" style="display: none;">
             <div id="gameInfoContainer">
                 <ul id="infolist">
                     <li>
@@ -385,18 +385,18 @@
 
 
 <!-- ------------------------------------------high score table--------------------------------------------------------------------------------------- -->
-        <div id="EndGame" style="display: none;"  >
+        <div id="EndGame" style="display: block;"  >
             <form id="EndGameForm">
             <div class="patterns" id="EndGameInDiv">
                 <svg width="100%" height="10%">
-                <text id="WinloseTxt" x="50%" y="80%" text-anchor="middle">
-                    
+                <text id="WinloseTxt" x="50%" y="80%" text-anchor="middle">   
                 </text>
                 </svg>
-                </text>
-                
                 <h4 id="titleAccordion">Scores Table</h4>
+                <button class="glow-on-hover" type="button" style="font-family: Open Sans; font-weight: bold; font-size: 25px;">START GAME</button>
+
                 <div class="table-wrapper">
+                    
                     <table class="fl-table">
 
                         <thead>
@@ -414,21 +414,19 @@
                     
                         <tbody>
                     </table>
+                    
                 </div>
-                
-                <table id="logs_btns">
-                <tr>
-                    <td>
-                    <input class="patterns-button" type="button" id="Restart_btn" value="Restart"></input>
-                    </td>
-                    <td>
-                    <input class="patterns-button" type="button" id="Exit_btn" value="Exit"></input>
-                    </td>
-                </tr>
-                </table>
+                <button class="glow-on-hover" type="button" style="font-family: Open Sans; font-weight: bold; font-size: 25px;">START GAME</button>
+
             </div>
+
             </form>
+            <button class="glow-on-hover" type="button" style="font-family: Open Sans; font-weight: bold; font-size: 25px;">START GAME</button>
+
+
         </div>
+        <button class="glow-on-hover" type="button" style="font-family: Open Sans; font-weight: bold; font-size: 25px;">START GAME</button>
+
 
 
 
