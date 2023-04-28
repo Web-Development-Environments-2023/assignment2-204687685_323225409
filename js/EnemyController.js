@@ -30,6 +30,9 @@ export default class EnemyController{
 
     level=1
 
+    levelUp =new Audio("/media/speed.mp3")
+   
+
 
 
 
@@ -156,8 +159,10 @@ export default class EnemyController{
         
     }
     
+
+    
     moveFaster(){//make bullets and enemies move faster
-        
+        this.levelUp.play()
         this.defaultXVelocity+=0.9
         this.bulletspeed-=2             
 

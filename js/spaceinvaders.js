@@ -90,6 +90,9 @@ winSound.volume=0.9
 let champSound=new Audio("/media/win2.mp3")
 champSound.volume=0.9
 
+let betterSound=new Audio("/media/better.mp3")
+betterSound.volume=0.9
+
 var keyShoot="Space"
 
 document.querySelector(".kbrd").addEventListener('input', (e) => {
@@ -326,7 +329,8 @@ function displayGameOver() {
             // ctx.font = "70px Arial"
             // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
 
-            document.getElementById("WinloseTxt").innerHTML = "You can do better";
+            document.getElementById("WinloseTxt").innerHTML = "You can do better"
+            betterSound.play()
             moveDivEnd()
         }
         if(didWin){
