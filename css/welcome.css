@@ -158,10 +158,10 @@ header{
 
 .containerR {
     position: absolute;
-    top: 50%;
+    top: 63%;
     left: 50%;
-    height: 45vh;
-    width: 98vw;
+    height: 55vh;
+    width: 100vw;
     overflow: hidden;
     transform: translate(-50%, -50%);
 }
@@ -176,7 +176,7 @@ header{
 .cloud .circle {
     position: absolute;
     border-radius: 50%;
-    background: rgb(205, 246, 255);
+    background: rgb(203, 241, 250);
 }
 .cloud .circle:nth-child(1) {
     height: 25px;
@@ -230,16 +230,7 @@ svg {
     transform: translate(-19%, -25%) rotate(138deg) scale(0.3);
     animation: rocket 1.7s linear infinite;
 }
-.trail {
-    height: 30px;
-    width: 96px;
-    background: linear-gradient(to right, rgb(255, 136, 0) 0, rgb(255, 38, 0));
-    left: 34%;
-    top: 36%;
-    position: absolute;
-    animation: trail 1.7s linear infinite;
-    
-}
+
 @keyframes cloud {
     0% {
         transform: translate(200%);
@@ -557,6 +548,7 @@ svg {
 
 .buttons{
     text-align: center;
+    padding-top: 5vh;
 }
 
 
@@ -571,12 +563,12 @@ svg {
     cursor: pointer;
     margin: 10px;
     border-radius: 90px;
-    transition: 0.5s ease-in-out ;
+    transition: 0.3s ease-in-out ;
 }
 
 .btn:hover{
     cursor: pointer;
     border: 2px solid #ffb9e3;
     background: rgb(235, 177, 211);
-    box-shadow: 0 0 5px #ffb9e3,0 0 20px #ffb9e3, 0 0 40px #ffb9e3, 0 0 80px #ffb9e3 ;
+    box-shadow: 0 0 2px #ffb9e3,0 0 5px #ffb9e3, 0 0 10px #ffb9e3, 0 0 20px #ffb9e3 ;
 }
