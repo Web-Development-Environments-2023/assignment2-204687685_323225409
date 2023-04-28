@@ -151,9 +151,170 @@ header{
 
 
 /*-------------------------------------------animation of rocket-------------------------------------------------------*/
+#welcomePage{
+    width: 90vw;
+    height: 90vh;
+}
+
+.containerR {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 45vh;
+    width: 98vw;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+}
+.cloud {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.cloud .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(205, 246, 255);
+}
+.cloud .circle:nth-child(1) {
+    height: 25px;
+    width: 25px;
+    top: 48%;
+    left: 42%;
+}
+.cloud .circle:nth-child(2) {
+    height: 32px;
+    width: 32px;
+    top: 29%;
+    left: 46%;
+}
+.cloud .circle:nth-child(3) {
+    height: 40px;
+    width: 40px;
+    top: 46%;
+    left: 51%;
+}
+.cloud .circle:nth-child(4) {
+    height: 26px;
+    width: 26px;
+    top: 25%;
+    left: 57%;
+}
+.cloud .circle:nth-child(5) {
+    height: 32px;
+    width: 32px;
+    top: 42%;
+    left: 62%;
+}
+.cloud:nth-child(1) {
+    animation: cloud 1.3s linear infinite;
+}
+.cloud:nth-child(2) {
+    top: 20%;
+    animation: cloud2 2s linear infinite;
+    animation-delay: -1.5s;
+}
+.cloud:nth-child(3) {
+    top: 10%;
+    animation: cloud3 1.8s linear infinite;
+    animation-delay: -0.8s;
+}
+.cloud:nth-child(4) {
+    top: 60%;
+    animation: cloud4 2s linear infinite;
+    animation-delay: -0.3s;
+}
+svg {
+    transform: translate(-19%, -25%) rotate(138deg) scale(0.3);
+    animation: rocket 1.7s linear infinite;
+}
+.trail {
+    height: 30px;
+    width: 96px;
+    background: linear-gradient(to right, rgb(255, 136, 0) 0, rgb(255, 38, 0));
+    left: 34%;
+    top: 36%;
+    position: absolute;
+    animation: trail 1.7s linear infinite;
+    
+}
+@keyframes cloud {
+    0% {
+        transform: translate(200%);
+   }
+    100% {
+        transform: translate(-300%);
+   }
+}
+@keyframes cloud2 {
+    0% {
+        transform: translate(200%) scale(0.5);
+   }
+    100% {
+        transform: translate(-300%) scale(0.5);
+   }
+}
+@keyframes cloud3 {
+    0% {
+        transform: translate(200%) scale(0.8);
+   }
+    100% {
+        transform: translate(-300%) scale(0.8);
+   }
+}
+@keyframes cloud4 {
+    0% {
+        transform: translate(200%) scale(0.3);
+   }
+    100% {
+        transform: translate(-300%) scale(0.3);
+   }
+}
+@keyframes rocket {
+    0% {
+        transform: translate(-18%, -25%) rotate(138deg) scale(0.3);
+   }
+    25% {
+        transform: translate(-20%, -25%) rotate(139deg) scale(0.3);
+   }
+    50% {
+        transform: translate(-19%, -26%) rotate(138deg) scale(0.3);
+   }
+    75% {
+        transform: translate(-19%, -25%) rotate(137deg) scale(0.3);
+   }
+    100% {
+        transform: translate(-18%, -25%) rotate(138deg) scale(0.3);
+   }
+}
+@keyframes trail {
+    0% {
+        transform: translate(-18%, -25%) rotate(0deg) scale(1);
+        opacity: 1;
+   }
+    25% {
+        transform: translate(-20%, -25%) rotate(1deg) scale(1.2);
+        opacity: 0.7;
+   }
+    50% {
+        transform: translate(-19%, -26%) rotate(0deg) scale(1);
+        opacity: 0.9;
+   }
+    75% {
+        transform: translate(-19%, -25%) rotate(-1deg) scale(1.2);
+        opacity: 0.6;
+   }
+    100% {
+        transform: translate(-18%, -25%) rotate(0deg) scale(1);
+        opacity: 1;
+   }
+}
 
 
-/*
+/* ================================================================================================ */
+/* originallllllllllllll
 .rocket{
     position: absolute;
     top: 35%;
