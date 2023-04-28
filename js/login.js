@@ -32,6 +32,13 @@ function submitLogin(){
 
 function moveToSettings(){
     $("#loginForm").hide()
+    $("#gameDiv").hide()
+    $("#signUpForm").hide()
+    $("#welcomePage").hide()
+    $("#EndGame").hide()
+
+
     $("#settingsDiv").show()
+
 }
   

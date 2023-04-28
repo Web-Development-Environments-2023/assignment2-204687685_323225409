@@ -5,7 +5,8 @@ import BulletController from "./BulletController.js"
 
 
 
-var intervalTimer= setInterval(game, 1000/60)
+// var intervalTimer= setInterval(game, 1000/60)
+var intervalTimer
 document.getElementById("homeFromGame").addEventListener("click", closeGameFromNavHome)
 // document.getElementById("aboutFromGame").addEventListener("click",closeGameFromNav)
 document.getElementById("signFromGame").addEventListener("click", closeGameFromNavSign)
@@ -13,6 +14,12 @@ document.getElementById("loginFromGame").addEventListener("click",closeGameFromN
 
 function closeGameFromNavHome(){
     $("#gameDiv").hide()
+    $("#signUpForm").hide()
+    $("#loginForm").hide()
+    $("#settingsDiv").hide()
+    $("#dialog").hide()
+    $("#EndGame").hide()
+    
     resetGame()
     $("#welcomePage").show()
     
@@ -26,6 +33,11 @@ function closeGameFromNavHome(){
 
 function closeGameFromNavSign(){
     $("#gameDiv").hide()
+    $("#welcomePage").hide()
+    $("#loginForm").hide()
+    $("#settingsDiv").hide()
+    $("#dialog").hide()
+    $("#EndGame").hide()
     resetGame()
     $("#signUpForm").show()
     
@@ -33,6 +45,11 @@ function closeGameFromNavSign(){
 
 function closeGameFromNavLogin(){
     $("#gameDiv").hide()
+    $("#signUpForm").hide()
+    $("#welcomePage").hide()
+    $("#settingsDiv").hide()
+    $("#dialog").hide()
+    $("#EndGame").hide()
     resetGame()
     $("#loginForm").show()
     
@@ -411,7 +428,13 @@ function clearTable() {
 
 function moveDivEnd(){
     //stop game function
+    $("#signUpForm").hide()
+    $("#welcomePage").hide()
+    $("#settingsDiv").hide()
+    $("#loginForm").hide()
+
     $("#gameDiv").hide()
+    
     resetGame()
     $("#EndGame").show()
 
@@ -419,6 +442,10 @@ function moveDivEnd(){
 
 function moveDivSett(){
     //stop game function
+    $("#gameDiv").hide()
+    $("#signUpForm").hide()
+    $("#welcomePage").hide()
+    $("#loginForm").hide()
     
     $("#EndGame").hide()
     resetGame()
@@ -433,13 +460,13 @@ document.getElementById("newGameSett").addEventListener("click",newGame)
 document.getElementById("NGM").addEventListener("click",newGame)
 
 
-function newGame(){
-    // if (intervalTimer != undefined){
-	// 	window.clearInterval(intervalTimer)
-	// }
     
-    // window.clearInterval(intervalTimer)
-    // stopInterval()
+function newGame(){
+    $("#signUpForm").hide()
+    $("#welcomePage").hide()
+    $("#dialog").hide()
+    $("#loginForm").hide()
+  
 
     $("#gameDiv").show()
     $("#EndGame").hide()

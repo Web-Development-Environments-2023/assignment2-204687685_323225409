@@ -16,6 +16,12 @@ for (i=0; i<accordion.length; i++){
 
 function showGameFromSettings(){
     $("#settingsDiv").hide()
+    $("#signUpForm").hide()
+    $("#welcomePage").hide()
+    $("#settingsDiv").hide()
+    $("#EndGame").hide()
+    $("#loginForm").hide()
+
     $("#gameDiv").show()
 }
 // document.querySelector(".kbrd").addEventListener('change', (e) => {
