@@ -12,13 +12,13 @@
 
 
 .table-wrapper{
-    margin: 5vw 7vh 7vw;
+    margin: 0vw 4vh 4vw;
     box-shadow: 10px 35px 50px rgba(255, 255, 255, 0.206);
 }
 
 .fl-table {
     /* border-radius: 30px; */
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     border: none;
     border-collapse: collapse;
@@ -38,7 +38,7 @@
 
 .fl-table td {
     border-right: 2px solid #545454;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .fl-table thead th {

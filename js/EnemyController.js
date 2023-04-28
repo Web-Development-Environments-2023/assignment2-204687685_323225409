@@ -1,7 +1,6 @@
 import Enemy from "./Enemy.js"
 import MovingDirection from "./MovingDirection.js"
 
-// jjj
 export default class EnemyController{
 
     enemyMap = [

@@ -84,16 +84,16 @@
 
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#" onclick="switchToDiv('welcomePage')" class="nav-link">Home</a>
+                    <a href="#" id="homeFromGame"  class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#popup"  onclick="openDialog()" class="nav-link">About Us</a>
+                    <a href="#popup" id="aboutFromGame" onclick="openDialog()" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" onclick="switchToDiv('signUpForm')" class="nav-link">Sign Up</a>
+                    <a href="#" id="signFromGame" class="nav-link">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" onclick="switchToDiv('loginForm')" class="nav-link">Login</a>
+                    <a href="#" id="loginFromGame" class="nav-link">Login</a>
                     
                 </li>
             </ul>
@@ -287,7 +287,7 @@
             <div id="gameInfoContainer">
                 <ul id="infolist">
                     <li>
-                        <label for="lblUser">LEVEL:</label>
+                        <label for="lblUser">USER:</label>
                         <br><br>
                         <input id="lblUser" type="text" class="gameLbl" />
 

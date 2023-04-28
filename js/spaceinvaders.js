@@ -6,18 +6,37 @@ import BulletController from "./BulletController.js"
 
 
 var intervalTimer= setInterval(game, 1000/60)
+document.getElementById("homeFromGame").addEventListener("click", closeGameFromNavHome)
+// document.getElementById("aboutFromGame").addEventListener("click",closeGameFromNav)
+document.getElementById("signFromGame").addEventListener("click", closeGameFromNavSign)
+document.getElementById("loginFromGame").addEventListener("click",closeGameFromNavLogin)
 
-
-
-hideAll()
-function hideAll(){
-    // $("#settingsDiv").hide()
-    // $("#gameDiv").show()
-    // $("#footer").hide()
-    // $("#logo").hide()
-
+function closeGameFromNavHome(){
+    $("#gameDiv").hide()
+    resetGame()
+    $("#welcomePage").show()
+    
 }
 
+// function closeGameFromNavAbout(){
+//     $("#gameDiv").hide()
+//     $("#welcomePage").show()
+//     resetGame()
+// }
+
+function closeGameFromNavSign(){
+    $("#gameDiv").hide()
+    resetGame()
+    $("#signUpForm").show()
+    
+}
+
+function closeGameFromNavLogin(){
+    $("#gameDiv").hide()
+    resetGame()
+    $("#loginForm").show()
+    
+}
 
 
 
@@ -156,7 +175,6 @@ function drawAllGame(){ // till game is on we continue draw it all
         player.draw(ctx)
         playerBulletController.draw(ctx)
         enemyBulletController.draw(ctx)
-        //mySound.play()
 
         lblScore.value = enemyController.score
         lblLife.value = player.lives
@@ -272,7 +290,6 @@ function checkGameOver() { //this function checks if bullets hit the player - if
 function displayGameOver() {
     if (isGameOver) {
         mySound.pause()
-        clearHighscoresTable() 
 
         if (option1){
             timeLimit=0
@@ -325,7 +342,7 @@ function displayGameOver() {
     }
 }
 
-var i = 0
+// var i = 0
 
 function insertTable(){
 
@@ -336,13 +353,9 @@ function insertTable(){
     
 
     var date = new Date().toLocaleString()
-    console.log('date:' + date)
-    
     var playerName = lblUser.value
-    console.log('name:' + playerName)
-
     var scoress = enemyController.score
-    console.log('score from label:' + scoress)
+
 
     let newRow = tbody.insertRow(); 
     // const newRow = table.insertRow();
@@ -355,22 +368,51 @@ function insertTable(){
     nameCell.innerText = playerName
     scoreCell.innerText =scoress;
     dateCell.innerText = date;
-    i += 1
+    // i += 1
 
-    
+    // console.log(nameCell.innerText)
 
     // Find the position to insert the new row based on the score
     // let rows = table.rows;
     let rows = tbody.rows;
 
     let position = rows.length - 1; // Start from the second last row (last row is the new one)
+
+
     while (position > 0 && parseInt(rows[position-1].cells[2].innerHTML) < scoress) {
         position--;
     }
+
+
+    if(position>0){
+        if(rows[position-1].cells[1].innerHTML!=undefined)
+            if(rows[position-1].cells[1].innerHTML!=playerName){
+                console.log("im here")
+                clearTable()
+                position=0
+                let newRow = tbody.insertRow(); 
+                // const newRow = table.insertRow();
+                const rankCell = newRow.insertCell();
+                const nameCell = newRow.insertCell();
+                const scoreCell = newRow.insertCell();
+                const dateCell = newRow.insertCell();
+            
+                // rankCell.innerText = i + 1;
+                nameCell.innerText = playerName
+                scoreCell.innerText =scoress;
+                dateCell.innerText = date;
+                rankCell.innerHTML = position+1
+            }
+        // else{
+        //     continue
+        // }
+    }
+    
     rankCell.innerHTML = position+1
 
     if (position < rows.length - 1) {
-        tbody.insertBefore(newRow, rows[position]); // Insert the new row at the correct position
+        tbody.insertBefore(newRow, rows[position]) // Insert the new row at the correct position
+        
         for(let i=position; i<rows.length; i++){
             rows[i].cells[0].innerHTML=i+1
 
@@ -381,14 +423,15 @@ function insertTable(){
 }
 
 
-function clearHighscoresTable() {
-    let highscoresTable = document.getElementById('.fl-table');
+function clearTable() {
+    let highscoresTable = document.querySelector('.fl-table')
     let tbody = highscoresTable.querySelector('tbody');
     if (tbody) {
-      tbody.remove();
+      while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild); // Remove all child nodes of tbody
+      }
     }
-  }
-
+}
 
 
 function moveDivEnd(){
@@ -411,25 +454,37 @@ function moveDivSett(){
 document.getElementById("newGameButton").addEventListener("click",moveDivSett)
 document.getElementById("newGameSett").addEventListener("click",newGame)
 document.getElementById("NGM").addEventListener("click",newGame)
+
+
 function newGame(){
-    if (intervalTimer != undefined){
-		window.clearInterval(intervalTimer)
-	}
+    // if (intervalTimer != undefined){
+	// 	window.clearInterval(intervalTimer)
+	// }
+    
     // window.clearInterval(intervalTimer)
     // stopInterval()
 
     $("#gameDiv").show()
     $("#EndGame").hide()
     $("#settingsDiv").hide()
-    canvas.focus()
     resetGame()
+    canvas.focus()
+    
     intervalTimer= setInterval(game, 1000/60)
+
+    mySound.play()
+
     // startInterval(game())
 }
 
 
 function resetGame(){
+    if (intervalTimer != undefined){
+		window.clearInterval(intervalTimer)
+	}
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    mySound.pause()
+    mySound.currentTime = 0
     isGameOver= false
     didWin= false
     option1=false
