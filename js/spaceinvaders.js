@@ -216,29 +216,6 @@ function incraseSpeedInGame(){
 
 
 
-
-
-
-
-
-
-// make the enemies move faster every 5 seconds
-// function fasterIn5Seconds() {
-//     // Code to be executed every 5 seconds
-//     if (every5limit>=4){
-//         clearTimeout(timeout5sec)
-//         return
-//     }
-//     enemyController.moveFaster()
-//     every5limit+=1
-//     setTimeout(fasterIn5Seconds, 5000)
-    
-//   }
-  
-//   let timeout5sec=setTimeout(fasterIn5Seconds, 5000);
-  
-
-
 function checkGameOver() { //this function checks if bullets hit the player - if so ->game is over
     if (isGameOver) {
         lblTime.value=0
@@ -265,9 +242,7 @@ function checkGameOver() { //this function checks if bullets hit the player - if
         if (enemyController.score>=100){
             isGameOver=true
             option2=true
-            
-            
-            
+
         }
         else{
             isGameOver=true
@@ -289,7 +264,8 @@ function checkGameOver() { //this function checks if bullets hit the player - if
 
 function displayGameOver() {
     if (isGameOver) {
-        mySound.pause()
+        // mySound
+        // resetGame()
 
         if (option1){
             timeLimit=0
@@ -345,7 +321,6 @@ function displayGameOver() {
 // var i = 0
 
 function insertTable(){
-
 
     var table = document.querySelector('.fl-table')
     let tbody = table.querySelector('tbody')  || highscoresTable.appendChild(document.createElement('tbody'))
@@ -437,6 +412,7 @@ function clearTable() {
 function moveDivEnd(){
     //stop game function
     $("#gameDiv").hide()
+    resetGame()
     $("#EndGame").show()
 
 }
@@ -445,6 +421,7 @@ function moveDivSett(){
     //stop game function
     
     $("#EndGame").hide()
+    resetGame()
     $("#settingsDiv").show()
 
 }
@@ -468,7 +445,7 @@ function newGame(){
     $("#EndGame").hide()
     $("#settingsDiv").hide()
     resetGame()
-    canvas.focus()
+    // canvas.focus()
     
     intervalTimer= setInterval(game, 1000/60)
 
@@ -484,7 +461,11 @@ function resetGame(){
 	}
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     mySound.pause()
+    playerDead.pause()
     mySound.currentTime = 0
+    playerDead.currentTime = 0
+    
+
     isGameOver= false
     didWin= false
     option1=false
@@ -495,6 +476,9 @@ function resetGame(){
     enemyController.createEnemies()
     enemyController.setBullets()
     enemyController.setDefaultX()
+
+    playerBulletController.setBulletsNone()
+    enemyBulletController.setBulletsNone()
 
     timeLimit = inputFieldTime.value*60
     start_time = new Date()

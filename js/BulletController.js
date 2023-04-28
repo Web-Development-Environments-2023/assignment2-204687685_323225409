@@ -29,7 +29,9 @@ export default class BulletController {
         }
       }
 
-
+      setBulletsNone(){
+        this.bullets=[]
+      }
 
 
 
