@@ -48,7 +48,7 @@
  
   #faq h5 {
     color: #ff6eca;
-    font-family: "Open Sans";
+    font-family:"Calibri", sans-serif;
     font-size: 30px;
     line-height: 10vh;
     text-align: left;
@@ -67,7 +67,7 @@
   #faq p {
     color: #dffffc;
     text-align: left;
-    font-family: 'hm_light', sans-serif;
+    font-family:"Calibri", sans-serif;
     font-size: 30px;
     line-height: 1.45;
     position: relative;

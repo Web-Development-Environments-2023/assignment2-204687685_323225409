@@ -26,7 +26,7 @@
     max-width: 100%;
     white-space: nowrap;
     background-color: rgb(229, 229, 229);
-    font-family: "Open Sans";
+    font-family:"Calibri", sans-serif;
     opacity: 0.9;
 
 }
@@ -136,7 +136,7 @@
 
 
 #WinloseTxt {
-    font-family: "Open Sans";
+    font-family:"Calibri", sans-serif;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;

@@ -45,7 +45,7 @@
     height: 75%;
     z-index: 0;
     zoom: 75%;
-    font-family: "Open Sans";
+    font-family:"Calibri", sans-serif;
     font-weight: bold;
 }
 
@@ -79,7 +79,7 @@
   background-color: rgb(255, 245, 250);
   box-sizing: border-box;
   resize: vertical;
-  font-family: "Exo";
+  font-family:"Calibri", sans-serif;
   font-size: 28px;
   font-weight: bold;
   width: 80%;
