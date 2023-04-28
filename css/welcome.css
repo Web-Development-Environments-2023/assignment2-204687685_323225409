@@ -256,12 +256,12 @@ header{
     border-radius: 100%;
     
 }
-
+/*
 
 .rocket .exhaust-fumes li:first-child{
     width: 200px;
     height: 200px;
-    bottom: -300px;
+    bottom: -700px;
     animation:fumes 5s infinite;
 }
 

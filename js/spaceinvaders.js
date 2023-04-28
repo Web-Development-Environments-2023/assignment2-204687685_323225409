@@ -176,6 +176,10 @@ mute.addEventListener('click', function() {
 
     inputFieldAudio.addEventListener("input", function() {
     mySound.volume=inputFieldAudio.value/100
+    playerBulletController.shootSound.volume=inputFieldAudio.value/100
+    enemyController.enemyDeathSound.volume=inputFieldAudio.value/100 
+    playerDead.volume=inputFieldAudio.value/100 
+    enemyController.levelUp.volume=inputFieldAudio.value/100
     
   
     });
@@ -362,7 +366,7 @@ function insertTable(){
 
     var date = new Date().toLocaleString()
     var playerName = lblUser.value
-    var scoress = enemyController.score
+    var scoress = lblScore.value
 
 
     let newRow = tbody.insertRow(); 
@@ -395,7 +399,6 @@ function insertTable(){
     if(position>0){
         if(rows[position-1].cells[1].innerHTML!=undefined)
             if(rows[position-1].cells[1].innerHTML!=playerName){
-                console.log("im here")
                 clearTable()
                 position=0
                 let newRow = tbody.insertRow(); 
@@ -504,9 +507,9 @@ function resetGame(){
 	}
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     mySound.pause()
-    playerDead.pause()
+    // playerDead.pause()
     mySound.currentTime = 0
-    playerDead.currentTime = 0
+    // playerDead.currentTime = 0
     
 
     isGameOver= false

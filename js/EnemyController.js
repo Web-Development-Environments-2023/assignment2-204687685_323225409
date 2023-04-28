@@ -163,6 +163,8 @@ export default class EnemyController{
     
     moveFaster(){//make bullets and enemies move faster
         this.levelUp.play()
+        this.levelUp.volume=0.6
+
         this.defaultXVelocity+=0.9
         this.bulletspeed-=2             
 
