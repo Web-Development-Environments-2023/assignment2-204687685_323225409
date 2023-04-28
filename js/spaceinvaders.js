@@ -151,12 +151,14 @@ mute.addEventListener('click', function() {
     playerDead.muted=false
     playerBulletController.shootSound.muted=false
     enemyController.enemyDeathSound.muted=false
+    enemyController.levelUp.muted = false
   }
   else{
     mySound.muted=true
     playerDead.muted=true
     playerBulletController.shootSound.muted=true
     enemyController.enemyDeathSound.muted=true 
+    enemyController.levelUp.muted = true
   }
   
   })
@@ -293,6 +295,7 @@ function checkGameOver() { //this function checks if bullets hit the player - if
 }
 
 
+const winlose= document.getElementById("WinloseTxt")
 
 
 function displayGameOver() {
@@ -309,7 +312,8 @@ function displayGameOver() {
             // ctx.fillStyle = "#ff68c3"
             // ctx.font = "70px Arial"
             // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
-            document.getElementById("WinloseTxt").innerHTML = "You Lost"
+            winlose.textContent = "You Lost"
+            winlose.style.fontSize = "100px";
             loseSound.play()
             moveDivEnd()
 
@@ -321,7 +325,9 @@ function displayGameOver() {
             // ctx.fillStyle = "#ff68c3"
             // ctx.font = "70px Arial"
             // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
-            document.getElementById("WinloseTxt").innerHTML = "Winner!"
+            winlose.textContent = "Winner!"
+
+            winlose.style.fontSize = "100px"
             winSound.play()
             moveDivEnd()
         }
@@ -333,7 +339,9 @@ function displayGameOver() {
             // ctx.font = "70px Arial"
             // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
 
-            document.getElementById("WinloseTxt").innerHTML = "You can do better"
+            winlose.textContent = "You can do better"
+
+            winlose.style.fontSize = "100px";
             betterSound.play()
             moveDivEnd()
         }
@@ -345,7 +353,9 @@ function displayGameOver() {
             // ctx.font = "70px Arial"
             // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
 
-            document.getElementById("WinloseTxt").innerHTML = "Champion!"
+            winlose.textContent = "Champion!"
+
+            winlose.style.fontSize = "100px";
             champSound.play()
             moveDivEnd()
         }

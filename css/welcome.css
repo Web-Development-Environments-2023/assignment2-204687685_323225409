@@ -152,6 +152,8 @@ header{
 
 /*-------------------------------------------animation of rocket-------------------------------------------------------*/
 
+
+/*
 .rocket{
     position: absolute;
     top: 35%;
@@ -249,61 +251,62 @@ header{
 
 .rocket .exhaust-fumes li{
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 3vw;
+    height: 6vh;
     background-color: #9a9a9a;
     list-style: none;
     border-radius: 100%;
+    bottom: -18vh;
     
 }
-/*
+
 
 .rocket .exhaust-fumes li:first-child{
-    width: 200px;
-    height: 200px;
-    bottom: -700px;
+    width: 10vw;
+    height: 15vh;
+    bottom: -35vh;
     animation:fumes 5s infinite;
 }
 
 
 .rocket .exhaust-fumes li:nth-child(2){
-    width: 150px;
-    height: 150px;
-    left: -120px;
-    top: 260px;
+    width: 8vw;
+    height: 15vh;
+    left: -8vw;
+    top: 48vh;
     animation:fumes 3.2s infinite;
 }
 
 .rocket .exhaust-fumes li:nth-child(3){
-    width: 120px;
+    width: 10vw;
     height: 120px;
-    left: -40px;
-    top: 330px;
+    left: -49px;
+    top: 50vh;
     animation:fumes 3s 1s infinite;
 }
 
 .rocket .exhaust-fumes li:nth-child(4){
-    width: 100px;
-    height: 100px;
-    left: -170px;
-    top: 370px;
+    width: 7vw;
+    height: 11vh;
+    left: -8vw;
+    top: 45vh;
     animation:fumes 4s 2s infinite;
 }
 
 
 .rocket .exhaust-fumes li:nth-child(5){
-    width: 130px;
-    height: 130px;
-    left: -120px;
-    top: 350px;
+    width: 11vw;
+    height: 17vh;
+    left: -5vw;
+    top: 40vh;
     animation:fumes 5s infinite;
 }
 
 .rocket .exhaust-fumes li:nth-child(6){
-    width: 200px;
-    height: 200px;
-    left: -60px;
-    top: 280px;
+    width: 16vw;
+    height: 24vh;
+    left: -5vw;
+    top: 50vh;
     animation:fumes2 10s infinite;
 }
 
@@ -311,7 +314,7 @@ header{
     width: 100px;
     height: 100px;
     left: -100px;
-    top: 320px;
+    top: 520px;
     animation:fumes 4s 2s infinite;
 }
 
@@ -319,7 +322,7 @@ header{
     width: 110px;
     height: 110px;
     left: 70px;
-    top: 340px;
+    top: 540px;
     animation:fumes 1s 2s infinite;
     
 }
@@ -330,7 +333,7 @@ header{
     width: 90px;
     height: 90px;
     left: 200px;
-    top: 380px;
+    top: 480px;
     animation:fumes 20s infinite;
 }
 
@@ -387,6 +390,7 @@ header{
 
 }
 
+*/
 /*----------------------------------welcome buttons-------------------------------------------*/
 
 
