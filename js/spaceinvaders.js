@@ -358,7 +358,7 @@ function insertTable(){
     i += 1
 
     
-  
+
     // Find the position to insert the new row based on the score
     // let rows = table.rows;
     let rows = tbody.rows;
