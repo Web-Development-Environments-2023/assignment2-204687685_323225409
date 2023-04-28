@@ -75,11 +75,20 @@ background.style.color = 'transparent'
 
 
 let mySound = new Audio('/media/music2.mp3')
-mySound.volume=0.1
+mySound.volume=0.3
 
 let playerDead=new Audio("/media/deadSound.mp3")
 playerDead.volume=0.9
 
+
+let loseSound=new Audio("/media/lose.mp3")
+loseSound.volume=0.9
+
+let winSound=new Audio("/media/win.mp3")
+winSound.volume=0.9
+
+let champSound=new Audio("/media/win2.mp3")
+champSound.volume=0.9
 
 var keyShoot="Space"
 
@@ -294,6 +303,7 @@ function displayGameOver() {
             // ctx.font = "70px Arial"
             // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
             document.getElementById("WinloseTxt").innerHTML = "You Lost"
+            loseSound.play()
             moveDivEnd()
 
         }
@@ -304,7 +314,8 @@ function displayGameOver() {
             // ctx.fillStyle = "#ff68c3"
             // ctx.font = "70px Arial"
             // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
-            document.getElementById("WinloseTxt").innerHTML = "Winner!";
+            document.getElementById("WinloseTxt").innerHTML = "Winner!"
+            winSound.play()
             moveDivEnd()
         }
         if(option3){
@@ -326,7 +337,8 @@ function displayGameOver() {
             // ctx.font = "70px Arial"
             // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
 
-            document.getElementById("WinloseTxt").innerHTML = "Champion!";
+            document.getElementById("WinloseTxt").innerHTML = "Champion!"
+            champSound.play()
             moveDivEnd()
         }
         insertTable()
