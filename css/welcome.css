@@ -191,11 +191,11 @@ header{
 
 .rocket .window{
     position: absolute;
-    width: 3.6vw;
+    width: 4vw;
     height: 8vh;
     border-radius: 100%;
     background-color: rgb(41, 41, 41);
-    left: calc(50% - 24px);
+    left: calc(50% - 2vw);
     top: 8vh;
     border: 5px solid #8e0000;
 }
@@ -254,6 +254,7 @@ header{
     background-color: #9a9a9a;
     list-style: none;
     border-radius: 100%;
+    
 }
 
 

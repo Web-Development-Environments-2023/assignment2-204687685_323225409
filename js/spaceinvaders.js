@@ -106,7 +106,7 @@ document.querySelector(".kbrd").addEventListener('input', (e) => {
 
 
 const playerBulletController = new BulletController(canvas, 20, "yellow", true)
-const enemyBulletController = new BulletController(canvas, 3, "red", false)
+const enemyBulletController = new BulletController(canvas, 2, "red", false)
 
 
 //instance of enemy

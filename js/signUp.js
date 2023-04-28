@@ -6,7 +6,7 @@
 //users dictionary after sign up. we will add it all sign ups
 
 
-var registeredUsers = {"a":"a", "n":"n"}; //befor hhagasha we need to chang it!!!!!!!!!!!!!!!!!
+var registeredUsers = {"p":"testuser", "a":"a", "n":"n"}; //befor hhagasha we need to chang it!!!!!!!!!!!!!!!!!
 // const loginSubmmition = document.getElementById("loginSubmmition");
 
 

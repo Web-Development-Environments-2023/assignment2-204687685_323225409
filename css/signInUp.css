@@ -6,13 +6,14 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 60%;
+    height: 65%;
     transform: translate(-50%, -50%);
     width: 100vh;
     
     /* display: flex; */
     justify-content: center;
     align-items: center;
+    zoom: 90%;
 
 }
 
@@ -31,6 +32,7 @@
 .signContainer{
     width: 100%;
     max-width: 850px;
+    /* height: 82vh; */
     background-color: rgb(0, 0, 0, 0.5);
     padding: 28px;
     margin: 0 28px;
