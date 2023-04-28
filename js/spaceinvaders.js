@@ -17,7 +17,6 @@ function closeGameFromNavHome(){
     $("#signUpForm").hide()
     $("#loginForm").hide()
     $("#settingsDiv").hide()
-    $("#dialog").hide()
     $("#EndGame").hide()
     
     resetGame()
@@ -36,7 +35,6 @@ function closeGameFromNavSign(){
     $("#welcomePage").hide()
     $("#loginForm").hide()
     $("#settingsDiv").hide()
-    $("#dialog").hide()
     $("#EndGame").hide()
     resetGame()
     $("#signUpForm").show()
@@ -48,7 +46,6 @@ function closeGameFromNavLogin(){
     $("#signUpForm").hide()
     $("#welcomePage").hide()
     $("#settingsDiv").hide()
-    $("#dialog").hide()
     $("#EndGame").hide()
     resetGame()
     $("#loginForm").show()
@@ -493,7 +490,6 @@ document.getElementById("NGM").addEventListener("click",newGame)
 function newGame(){
     $("#signUpForm").hide()
     $("#welcomePage").hide()
-    $("#dialog").hide()
     $("#loginForm").hide()
   
 
