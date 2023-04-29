@@ -21,7 +21,7 @@ export default class EnemyController{
     defaultXVelocity = 3
     defaultYVelocity = 1
     
-    fireBulletTimerDefault = 90 //control the time of enemy shooting
+    fireBulletTimerDefault = 60 //control the time of enemy shooting
     fireBulletTimer = this.fireBulletTimerDefault
 
     scoreDefault = 0
@@ -93,8 +93,7 @@ export default class EnemyController{
 
 
     fireBullet(speed) {
-        //this.fireBulletTimer = (this.yVelocity) / (this.canvasHeight)*0.6 
-        //console.log(this.fireBulletTimer)
+
         speed=this.bulletspeed//make bullet faster each time  
         this.fireBulletTimer--
         if (this.fireBulletTimer <= 0) {

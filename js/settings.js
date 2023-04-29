@@ -1,10 +1,6 @@
 const accordion = document.querySelectorAll(".contentBx")
 
-// accordion.forEach((question) => {
-//     accordion.addEventListener("click", () => {
-//         accordion.classList.toggle("active")
-//     })
-// })
+
 
 for (i=0; i<accordion.length; i++){
     accordion[i].addEventListener('click', function() {
@@ -21,11 +17,7 @@ function showGameFromSettings(){
     $("#settingsDiv").hide()
     $("#EndGame").hide()
     $("#loginForm").hide()
+    $("#footer").hide()
 
     $("#gameDiv").show()
 }
-// document.querySelector(".kbrd").addEventListener('change', (e) => {
-    
-//     console.log(e.currentTarget.value)
-   
-//  });

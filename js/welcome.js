@@ -2,7 +2,6 @@
 
 
 
-// import { endGame } from "./spaceinvaders.js";
 
 
 //welcome page objects
@@ -19,18 +18,6 @@ const loginForm = document.getElementById("loginForm");
 const settingsDiv = document.getElementById("settingsDiv");
 const gameDiv = document.getElementById("gameDiv");
 const footer = document.getElementById("footer");
-
-
-/*--------------sign up popUp menu----------------------
-document.querySelector("#signUpButton").addEventListener("click", function(){
-    document.querySelector(".popup").classList.add("active");
-});
-
-
-document.querySelector(".popup .close-btn").addEventListener("click",function(){
-    document.querySelector(".popup").classList.remove("active");
-});*/
-//---------------------------------------------------------------------
 
 
 
@@ -55,9 +42,6 @@ function switchToDiv(divToSwitch) { //this is the main function that control the
 
 
 
-//   //-------------------------------------------------------------welcome page events & buttons-------------------------------------------------------------------------------------------------
-//   signUpButton.addEventListener("click", function() {swhichToDiv('signUpForm')}, false);
-//   loginForm.addEventListener("click", function() {swhichToDiv('loginForm')}, false);
 
 
 //mute-unmute functionality

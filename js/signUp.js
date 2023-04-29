@@ -37,10 +37,7 @@ $(document).ready(function() {
 
 function validateSignUp(){
     $("#signForm").validate({
-        // focusInvalid: false,
-        // onkeyup: false,
-        // onclick: false,
-        // onfocusout: true,
+
         rules: {
             UserName: {
                 required: true

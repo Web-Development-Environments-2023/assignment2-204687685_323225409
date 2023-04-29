@@ -24,11 +24,7 @@ function closeGameFromNavHome(){
     
 }
 
-// function closeGameFromNavAbout(){
-//     $("#gameDiv").hide()
-//     $("#welcomePage").show()
-//     resetGame()
-// }
+
 
 function closeGameFromNavSign(){
     $("#gameDiv").hide()
@@ -297,18 +293,11 @@ const winlose= document.getElementById("WinloseTxt")
 
 function displayGameOver() {
     if (isGameOver) {
-        // mySound
-        // resetGame()
+
 
         if (option1){
             timeLimit=0
 
-            // let text = "You Lost" 
-            // let textOffset = 5
-        
-            // ctx.fillStyle = "#ff68c3"
-            // ctx.font = "70px Arial"
-            // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
             winlose.textContent = "You Lost"
             winlose.style.fontSize = "100px";
             loseSound.play()
@@ -316,12 +305,7 @@ function displayGameOver() {
 
         }
         if(option2){
-            // let text = "Winner" 
-            // let textOffset = 5
-        
-            // ctx.fillStyle = "#ff68c3"
-            // ctx.font = "70px Arial"
-            // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+
             winlose.textContent = "Winner!"
 
             winlose.style.fontSize = "100px"
@@ -329,12 +313,7 @@ function displayGameOver() {
             moveDivEnd()
         }
         if(option3){
-            // let text = "You can do better" 
-            // let textOffset = 5
-        
-            // ctx.fillStyle = "#ff68c3"
-            // ctx.font = "70px Arial"
-            // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+
 
             winlose.textContent = "You can do better"
 
@@ -343,12 +322,7 @@ function displayGameOver() {
             moveDivEnd()
         }
         if(didWin){
-            // let text = "Champion" 
-            // let textOffset = 5
-        
-            // ctx.fillStyle = "#ff68c3"
-            // ctx.font = "70px Arial"
-            // ctx.fillText(text, canvas.width / textOffset, canvas.height / 2)
+
 
             winlose.textContent = "Champion!"
 
@@ -387,12 +361,7 @@ function insertTable(){
     nameCell.innerText = playerName
     scoreCell.innerText =scoress;
     dateCell.innerText = date;
-    // i += 1
 
-    // console.log(nameCell.innerText)
-
-    // Find the position to insert the new row based on the score
-    // let rows = table.rows;
     let rows = tbody.rows;
 
     let position = rows.length - 1; // Start from the second last row (last row is the new one)
@@ -463,6 +432,7 @@ function moveDivEnd(){
     
     resetGame()
     $("#EndGame").show()
+    $("#footer").show()
 
 }
 
@@ -476,6 +446,7 @@ function moveDivSett(){
     $("#EndGame").hide()
     resetGame()
     $("#settingsDiv").show()
+    $("#footer").show()
 
 }
 
@@ -491,6 +462,8 @@ function newGame(){
     $("#signUpForm").hide()
     $("#welcomePage").hide()
     $("#loginForm").hide()
+    $("#footer").hide()
+    
   
 
     $("#gameDiv").show()

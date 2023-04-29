@@ -12,11 +12,7 @@ function submitLogin(){
         if(registeredUsers[userName] == password){
             lblUser.value = userName
             moveToSettings()
-                        // submitHandler:{
-            //     $('#loginForm').fadeOut();
-            //     $('#settingsDiv').delay(550).show(0);
-            // }
-            
+
         }
         else{
             alert("wrong password")
@@ -36,6 +32,7 @@ function moveToSettings(){
     $("#signUpForm").hide()
     $("#welcomePage").hide()
     $("#EndGame").hide()
+    $("#footer").show()
 
 
     $("#settingsDiv").show()
