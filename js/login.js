@@ -11,6 +11,7 @@ function submitLogin(){
     if (userName in registeredUsers){
         if(registeredUsers[userName] == password){
             lblUser.value = userName
+
             moveToSettings()
 
         }
@@ -27,13 +28,13 @@ function submitLogin(){
 
 
 function moveToSettings(){
+
     $("#loginForm").hide()
     $("#gameDiv").hide()
     $("#signUpForm").hide()
     $("#welcomePage").hide()
     $("#EndGame").hide()
-    $("#footer").show()
-
+    // $("#footer").show()
 
     $("#settingsDiv").show()
 

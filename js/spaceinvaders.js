@@ -95,7 +95,6 @@ document.querySelector(".kbrd").addEventListener('input', (e) => {
     
  });
 
- 
 
 
 const playerBulletController = new BulletController(canvas, 20, "yellow", true)
@@ -104,7 +103,7 @@ const enemyBulletController = new BulletController(canvas, 2, "red", false)
 
 //instance of enemy
 const enemyController = new EnemyController(canvas, enemyBulletController, playerBulletController)
-const player = new Player(canvas, 3, playerBulletController,keyShoot)
+var player = new Player(canvas, 3, playerBulletController,keyShoot, starship)
 let newPlayerPositionX = player.x
 
 
@@ -490,7 +489,8 @@ function resetGame(){
     mySound.currentTime = 0
     // playerDead.currentTime = 0
     
-
+    player = new Player(canvas, 3, playerBulletController,keyShoot, starship)
+    
     isGameOver= false
     didWin= false
     option1=false

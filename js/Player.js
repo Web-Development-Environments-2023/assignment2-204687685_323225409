@@ -15,21 +15,22 @@ export default class Player {
 
     
 
-    constructor(canvas, velocity, bulletController,keyShoot = "Space"){
+    constructor(canvas, velocity, bulletController,keyShoot = "Space", starship=1){
         this.canvas = canvas
         this.velocity = 7 //need to increase the speed
         this.bulletController = bulletController;
         this.lives = 3
         //this.x = this.canvas.width / 2
         this.x = Math.floor(Math.random()*(canvas.width-70))
-
+        this.starship = starship
         this.y = this.canvas.height - 100
         //Math.floor(Math.random()*(canvas.width-70))
 
         this.width = 75;
         this.height = 100;
         this.image = new Image();
-        this.image.src = "media/player1.png"
+        // this.image.src = "media/player1.png"
+        this.image.src = `media/player${this.starship}.png`;
         this.keyShoot=keyShoot
         
 
