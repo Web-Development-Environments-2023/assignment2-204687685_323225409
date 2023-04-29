@@ -30,7 +30,7 @@ export default class EnemyController{
 
     level=1
 
-    levelUp =new Audio("/media/speed.mp3")
+    levelUp =new Audio("media/speed.mp3")
    
 
 

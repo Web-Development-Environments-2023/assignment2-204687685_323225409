@@ -1,6 +1,6 @@
 const dialog = document.getElementById('dialog')
 
-let clickSound=new Audio("/media/click.mp3")
+let clickSound=new Audio("media/click.mp3")
 clickSound.volume=0.9
 
 // Close dialog when Esc key is pressed
