@@ -5,6 +5,7 @@ export default class BulletController {
     bullets = []
     timeTillNextBulletAllowed = 0
     
+    
 
 
     constructor(canvas, maxBulletsAtATime, bulletColor, soundEnabled){
