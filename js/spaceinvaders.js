@@ -71,23 +71,23 @@ const background = new Image()
 background.style.color = 'transparent'
 
 
-let mySound = new Audio('/media/music2.mp3')
+let mySound = new Audio("media/music2.mp3")
 mySound.volume=0.3
 
-let playerDead=new Audio("/media/deadSound.mp3")
+let playerDead=new Audio("media/deadSound.mp3")
 playerDead.volume=0.9
 
 
-let loseSound=new Audio("/media/lose.mp3")
+let loseSound=new Audio("media/lose.mp3")
 loseSound.volume=0.9
 
-let winSound=new Audio("/media/win.mp3")
+let winSound=new Audio("media/win.mp3")
 winSound.volume=0.9
 
-let champSound=new Audio("/media/win2.mp3")
+let champSound=new Audio("media/win2.mp3")
 champSound.volume=0.9
 
-let betterSound=new Audio("/media/better.mp3")
+let betterSound=new Audio("media/better.mp3")
 betterSound.volume=0.9
 
 var keyShoot="Space"
