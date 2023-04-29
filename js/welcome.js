@@ -52,4 +52,28 @@ $('.speaker').click(function(e) {
   });
 
 
+  function fromWelcomeToLogin(){
+    $("#loginForm").show()
+    $("#gameDiv").hide()
+    $("#signUpForm").hide()
+    $("#welcomePage").hide()
+    $("#EndGame").hide()
+    $("#footer").show()
 
+
+    $("#settingsDiv").hide()
+
+}
+
+function fromWelcomeToSignup(){
+    $("#loginForm").hide()
+    $("#gameDiv").hide()
+    $("#signUpForm").show()
+    $("#welcomePage").hide()
+    $("#EndGame").hide()
+    $("#footer").show()
+
+
+    $("#settingsDiv").hide()
+
+}
