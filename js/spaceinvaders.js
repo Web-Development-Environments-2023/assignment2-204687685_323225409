@@ -106,7 +106,10 @@ const enemyBulletController = new BulletController(canvas, 2, "red", false)
 //instance of enemy
 const enemyController = new EnemyController(canvas, enemyBulletController, playerBulletController)
 var player = new Player(canvas, 3, playerBulletController,keyShoot, starship)
+
 let newPlayerPositionX = player.x
+let newPlayerPositionY = player.y
+
 
 
 
@@ -258,6 +261,7 @@ function checkGameOver() { //this function checks if bullets hit the player - if
             
         }
         player.x = newPlayerPositionX
+        player.y = newPlayerPositionY
     }
     
 
@@ -385,9 +389,7 @@ function insertTable(){
                 dateCell.innerText = date;
                 rankCell.innerHTML = position+1
             }
-        // else{
-        //     continue
-        // }
+       
     }
     
     rankCell.innerHTML = position+1
@@ -465,13 +467,11 @@ function newGame(){
     $("#EndGame").hide()
     $("#settingsDiv").hide()
     resetGame()
-    // canvas.focus()
     
     intervalTimer= setInterval(game, 1000/60)
 
     mySound.play()
 
-    // startInterval(game())
 }
 
 
@@ -488,6 +488,9 @@ function resetGame(){
     player = new Player(canvas, 3, playerBulletController,keyShoot, starship)
     keyShoot = document.getElementById("shoot").value
     player.setVal(keyShoot)
+
+    newPlayerPositionX = player.x
+    newPlayerPositionY = player.y
 
     isGameOver= false
     didWin= false
