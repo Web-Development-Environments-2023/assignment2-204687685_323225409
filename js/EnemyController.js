@@ -21,7 +21,7 @@ export default class EnemyController{
     defaultXVelocity = 3
     defaultYVelocity = 1
     
-    fireBulletTimerDefault = 60 //control the time of enemy shooting
+    fireBulletTimerDefault = 90 //control the time of enemy shooting
     fireBulletTimer = this.fireBulletTimerDefault
 
     scoreDefault = 0
