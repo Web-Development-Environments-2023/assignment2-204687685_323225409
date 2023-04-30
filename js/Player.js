@@ -53,12 +53,12 @@ export default class Player {
     }
 
 
-    setVal(key){ //choose the player key to shoot
-      if(key!="Space"){
-        this.letterPressed=key.toUpperCase()
-        this.keyShoot=this.keyWord.concat(this.letterPressed)
-      }
-    }
+    // setVal(key){ //choose the player key to shoot
+    //   if(key!="Space"){
+    //     this.letterPressed=key.toUpperCase()
+    //     this.keyShoot=this.keyWord.concat(this.letterPressed)
+    //   }
+    // }
 
 
     setLives(){
@@ -66,7 +66,9 @@ export default class Player {
     }
 
 
-    
+    setVal(key){
+      this.keyShoot = key
+    }
 
 
     move() {
@@ -124,7 +126,7 @@ export default class Player {
           if (event.code == "ArrowDown") {
             this.downPressed = true
           }
-
+          console.log(this.keyShoot)
         if (event.code == this.keyShoot) {
           this.shootPressed = true
         }

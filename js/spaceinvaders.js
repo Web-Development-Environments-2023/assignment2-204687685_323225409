@@ -86,14 +86,16 @@ champSound.volume=0.9
 let betterSound=new Audio("media/better.mp3")
 betterSound.volume=0.9
 
-var keyShoot="Space"
+// var keyShoot="Space"
 
-document.querySelector(".kbrd").addEventListener('input', (e) => {
+var keyShoot = document.getElementById("shoot").value;
+
+// document.querySelector(".kbrd").addEventListener('input', (e) => {
     
-    keyShoot=e.currentTarget.value
-    player.setVal(keyShoot)
+//     keyShoot=e.currentTarget.value
+//     player.setVal(keyShoot)
     
- });
+//  });
 
 
 
@@ -490,6 +492,7 @@ function resetGame(){
     // playerDead.currentTime = 0
     
     player = new Player(canvas, 3, playerBulletController,keyShoot, starship)
+    keyShoot = document.getElementById("shoot").value
     player.setVal(keyShoot)
 
     isGameOver= false

@@ -44,3 +44,16 @@ function choosePlayer(el){
 
 
 }
+
+function shootKey(event){
+    let Keyshoot = document.getElementById("shoot");
+    if(event.which >= 65 && event.which <= 90 || event.which == 32){
+        Keyshoot.value = event.code
+        if(event.which ===32){
+            Keyshoot.value = "Space"
+        }
+    }
+    else{
+        Keyshoot.value = "Space"
+    }   
+}

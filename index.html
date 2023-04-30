@@ -284,7 +284,7 @@
                     <h5>Keyboard</h5>
                     <p>
                         <label>Shoots key:</label>
-                        <input type="text" id="shoot" class="kbrd" maxlength="1" pattern="[A-Za-z\s]" placeholder="Only Letters"/>
+                        <input type="text" id="shoot" class="kbrd" onkeydown="shootKey(event)" autocomplete="off" maxlength="1" pattern="[A-Za-z\s]" placeholder="Only Letters"/>
                     </p>
                   </li>
                   <li>
