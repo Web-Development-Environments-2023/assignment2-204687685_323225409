@@ -130,14 +130,6 @@ start_time = new Date()
 
 
 
-
-
-
-
-
-
-
-
 // controling the sound in the game
 mute.addEventListener('click', function() {
   if(mySound.muted==true){
@@ -157,6 +149,8 @@ mute.addEventListener('click', function() {
   
   })
 
+
+//   var timeSelected = document.getElementById("minutes").value
   var inputFieldTime = document.querySelector(".timeSettings");//take the time from the input and set the time limit 
   
   inputFieldTime.addEventListener("input", function() {
@@ -509,7 +503,13 @@ function resetGame(){
     playerBulletController.setBulletsNone()
     enemyBulletController.setBulletsNone()
 
-    timeLimit = inputFieldTime.value*60
+    // timeLimit = inputFieldTime.value*60
+    if(inputFieldTime.value>2 && inputFieldTime.value<=9){
+        timeLimit = inputFieldTime.value*60;
+    }
+    else{
+        timeLimit = 120
+    }  
     start_time = new Date()
     incrase=0
     timeToIncrase=5

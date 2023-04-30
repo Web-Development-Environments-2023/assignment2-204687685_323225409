@@ -68,6 +68,9 @@ export default class Player {
 
     setVal(key){
       this.keyShoot = key
+      if(key===""){
+        this.keyShoot="Space"
+        }
     }
 
 
@@ -126,7 +129,6 @@ export default class Player {
           if (event.code == "ArrowDown") {
             this.downPressed = true
           }
-          console.log(this.keyShoot)
         if (event.code == this.keyShoot) {
           this.shootPressed = true
         }
