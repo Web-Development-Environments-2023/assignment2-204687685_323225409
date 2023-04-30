@@ -53,15 +53,15 @@
 
 
  .popup-inner {
-	 position: relative;
-	 bottom: -100vw;
-	 right: -100vh;
-	 display: flex;
-	 align-items: center;
-	 max-width: 300vw;
-	 max-height: 200vh;
-	 width: 80%;
-	 height: 80%;
+	position: relative;
+	bottom: -100vw;
+	right: -100vh;
+	display: flex;
+	align-items: center;
+	max-width: 300vw;
+	max-height: 200vh;
+	width: 80%;
+	height: 80%;
    background-image: url("/media/galaxy2.jpeg");
    background-position: center;
    background-repeat: no-repeat;
@@ -84,7 +84,7 @@
 	 overflow: hidden;
    opacity: 0.7;
    padding-right: 2vw;
-   /* animation: bounce 0.4s infinite; */
+   
    background-color: rgba(0, 0, 0, 0.549);
    border-radius: 50px;
 
@@ -110,13 +110,14 @@
 
 }
  .popup__text h1 {
-	 font-size: 2rem;
-	 font-weight: bold;
-	 margin-bottom: 1rem;
-   padding-top: 1rem;
-	 text-transform: uppercase;
-   text-align: center;
-	 color: #baddff;
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	padding-top: 1rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: #baddff;
+	/* animation: bounce 0.4s infinite; */
 }
  .popup__text p {
 	 font-size: 1rem;
