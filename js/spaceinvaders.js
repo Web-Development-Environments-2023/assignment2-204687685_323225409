@@ -490,7 +490,8 @@ function resetGame(){
     // playerDead.currentTime = 0
     
     player = new Player(canvas, 3, playerBulletController,keyShoot, starship)
-    
+    player.setVal(keyShoot)
+
     isGameOver= false
     didWin= false
     option1=false
